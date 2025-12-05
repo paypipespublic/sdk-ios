@@ -1,0 +1,479 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayPipes
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import AVFoundation
+import CryptoKit
+import Darwin
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import Vision
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+public enum NetworkError : PayPipes.SDKError {
+  case noInternetConnectivity
+  case connectionFailed
+  case connectionTimeout
+  case connectionLost
+  case internationalRoamingOff
+  case unknown(additionalInfo: Swift.String, error: (any Swift.Error)?)
+  case certificateTransparencyChecksFailed
+  case couldNotDecodeValues
+  case emptyResponse
+  case unexpectedServerError(statusCode: Swift.Int, responseData: Foundation.Data?)
+  public var code: Swift.Int {
+    get
+  }
+}
+extension PayPipes.NetworkError : Swift.Hashable {
+  public static func == (lhs: PayPipes.NetworkError, rhs: PayPipes.NetworkError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ServerError : PayPipes.SDKError {
+  public let code: Swift.Int
+  public let message: Swift.String
+  public let type: PayPipes.ServerError.ServerErrorType
+  public static func == (a: PayPipes.ServerError, b: PayPipes.ServerError) -> Swift.Bool
+}
+extension PayPipes.ServerError {
+  public enum ServerErrorType : Swift.Int {
+    case generalError
+    case unauthenticated
+    case jsonEncodeFailed
+    case generalValidationError
+    case unauthorized
+    case urlNotFound
+    case tokenMismatch
+    case httpException
+    case oauthException
+    case requestFailed
+    case setupFailed
+    case gatewayNotFound
+    case configurationNotFound
+    case validatorNotFound
+    case clientNotFound
+    case credentialNotFound
+    case modelNotFound
+    case methodNotFound
+    case transactionNotFound
+    case transactionCreationFailed
+    case invalidGateway
+    case invalidSettings
+    case invalidStatus
+    case invalidPayment
+    case invalidWithdraw
+    case invalidRefund
+    case invalidReversal
+    case bankAccountNotFound
+    case collectorsGatewayNotFound
+    case invalidCurrency
+    case invalidAmount
+    case invalidAmountFormat
+    case paymentAlreadyProcessed
+    case invalidSignature
+    case webhookUrlNotFound
+    case notEligibleForWebhook
+    case invalidWebhookSignature
+    case operationHandlerNotFound
+    case emailBlacklisted
+    case ipBlacklisted
+    case countryBlacklisted
+    case invalidTransactionCustomer
+    case invalidCascadingGateway
+    case invalidCascadingTransaction
+    case invalidCascadingApplePay
+    case invalidTransactionStatus
+    case transactionExpired
+    case transactionGatewayNotSet
+    case depositHandlerNotFound
+    case gatewayNotSupport
+    case tokenCustomerLoadFailed
+    case transactionReturnUrlNotFound
+    case getStatusFailed
+    case emptyReturnUrl
+    case refundFailed
+    case reversalFailed
+    case missingTokenForCurrency
+    case threedsFailed
+    case threedsInvalidData
+    case threedsInvalidSignature
+    case gatewayTypeNotSet
+    case notImplemented
+    case cardNotRecognized
+    case carbonCreateFailed
+    case cardBlacklisted
+    case cryptoKeyCreationFailed
+    case cryptoKeyDecryptionFailed
+    case invalidTransactionType
+    case invalidAccessToken
+    case invalidWalletId
+    case invalidWalletSecret
+    case invalidCallbackSecret
+    case invalidResultStatus
+    case invalidCallbackPayload
+    case transactionReferenceNotFound
+    case noRoutableGateways
+    case fetchExchangeRatesException
+    case nvpToArrayConversionFailed
+    case xmlToArrayConversionFailed
+    case invalidTerminal
+    case invalidParent
+    case customerNotFound
+    case parentTransactionNotFound
+    case invalidSessionIdentifier
+    case invalidPhone
+    case invalidAddress
+    case encryptionFailed
+    case decryptionFailed
+    case invalidGatewayType
+    case invalidSimulatorTransaction
+    case invalidMemberId
+    case invalidCredentials
+    case unknown
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.Int)
+    #endif
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+public struct Address : Swift.Equatable {
+  public let street: Swift.String?
+  public let city: Swift.String?
+  public let state: Swift.String?
+  public let postCode: Swift.String?
+  public let country: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(street: Swift.String?, city: Swift.String?, state: Swift.String?, postCode: Swift.String?, country: Swift.String?)
+  #endif
+  public static func == (a: PayPipes.Address, b: PayPipes.Address) -> Swift.Bool
+}
+public struct CardTransactionDetails {
+  public let transactionId: Swift.String
+}
+@_Concurrency.MainActor @preconcurrency public struct PayPipesCardTransactionController : SwiftUI.UIViewControllerRepresentable {
+  public typealias UIViewControllerType = UIKit.UIViewController
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(isPresented: SwiftUICore.Binding<Swift.Bool>, configuration: PayPipes.Configuration, transaction: PayPipes.CardTransaction, onResult: @escaping (PayPipes.CardTransactionResult) -> Swift.Void)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context _: PayPipes.PayPipesCardTransactionController.Context) -> UIKit.UIViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_: UIKit.UIViewController, context _: PayPipes.PayPipesCardTransactionController.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+}
+extension SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public func payPipesUI(isPresented: SwiftUICore.Binding<Swift.Bool>, configuration: PayPipes.Configuration, transaction: PayPipes.CardTransaction, onResult: @escaping (PayPipes.CardTransactionResult) -> Swift.Void) -> some SwiftUICore.View
+  
+  #endif
+}
+public struct CardTransaction {
+  public init(amount: PayPipes.Money, orderId: Swift.String, billingInfo: PayPipes.BillingInfo, flowType: PayPipes.FlowType = .cardPayment, billingAddressRequired: Swift.Bool = false)
+  public let amount: PayPipes.Money
+  public let orderId: Swift.String
+  public var billingInfo: PayPipes.BillingInfo
+  public let flowType: PayPipes.FlowType
+  public let billingAddressRequired: Swift.Bool
+}
+public enum CardScheme : Swift.String, Swift.CaseIterable, Swift.Decodable {
+  case visa
+  case amex
+  case mastercard
+  case maestro
+  case discover
+  case jcb
+  case diners
+  case unionpay
+  case cartesBancaires
+  case unknown
+  public static var all: [PayPipes.CardScheme] {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var icon: UIKit.UIImage? {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var cvcImage: UIKit.UIImage? {
+    get
+  }
+  #endif
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias AllCases = [PayPipes.CardScheme]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PayPipes.CardScheme] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CardTransactionDeclineCode : Swift.String, Swift.Decodable {
+  case general
+  case cardData
+  case cardLimit
+  case riskFraud
+  case treeDs
+  case insufficientFunds
+  case uknown
+  public var localizeCode: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Theme {
+  public var colors: PayPipes.Theme.Colors
+  public var fonts: PayPipes.Theme.Fonts
+  public var sizes: PayPipes.Theme.Sizes.Type
+  public init(colors: PayPipes.Theme.Colors = .default, fonts: PayPipes.Theme.Fonts = .default)
+  public static let `default`: PayPipes.Theme
+  public static var current: PayPipes.Theme
+}
+extension PayPipes.Theme {
+  public struct Colors {
+    public var screenBackgroundColor: UIKit.UIColor
+    public var primaryTextColor: UIKit.UIColor
+    public var secondaryTextColor: UIKit.UIColor
+    public var linkColor: UIKit.UIColor
+    public var sectionTitleColor: UIKit.UIColor
+    public var inputTitleColor: UIKit.UIColor
+    public var inputTextColor: UIKit.UIColor
+    public var inputErrorColor: UIKit.UIColor
+    public var inputFocusedBorderColor: UIKit.UIColor
+    public var inputNormalBorderColor: UIKit.UIColor
+    public var inputErrorBorderColor: UIKit.UIColor
+    public var buttonBackgroundColor: UIKit.UIColor
+    public var buttonTitleColor: UIKit.UIColor
+    public var checkboxCheckedColor: UIKit.UIColor
+    public var checkboxUnCheckedColor: UIKit.UIColor
+    public var pickerTitleColor: UIKit.UIColor
+    public init(screenBackgroundColor: UIKit.UIColor = Colors.default.screenBackgroundColor, primaryTextColor: UIKit.UIColor = Colors.default.primaryTextColor, secondaryTextColor: UIKit.UIColor = Colors.default.secondaryTextColor, linkColor: UIKit.UIColor = Colors.default.linkColor, sectionTitleColor: UIKit.UIColor = Colors.default.sectionTitleColor, inputTitleColor: UIKit.UIColor = Colors.default.inputTitleColor, inputTextColor: UIKit.UIColor = Colors.default.inputTextColor, inputErrorColor: UIKit.UIColor = Colors.default.inputErrorColor, inputFocusedBorderColor: UIKit.UIColor = Colors.default.inputFocusedBorderColor, inputNormalBorderColor: UIKit.UIColor = Colors.default.inputNormalBorderColor, inputErrorBorderColor: UIKit.UIColor = Colors.default.inputErrorBorderColor, buttonBackgroundColor: UIKit.UIColor = Colors.default.buttonBackgroundColor, buttonTitleColor: UIKit.UIColor = Colors.default.buttonTitleColor, checkboxCheckedColor: UIKit.UIColor = Colors.default.checkboxCheckedColor, checkboxUnCheckedColor: UIKit.UIColor = Colors.default.checkboxUnCheckedColor, pickerTitleColor: UIKit.UIColor = Colors.default.pickerTitleColor)
+    public static let `default`: PayPipes.Theme.Colors
+  }
+  public static let actionColor: UIKit.UIColor
+}
+extension PayPipes.Theme {
+  public struct Fonts {
+    public var sectionTitleFont: UIKit.UIFont
+    public var primaryTextFont: UIKit.UIFont
+    public var secondaryTextFont: UIKit.UIFont
+    public var inputTitleFont: UIKit.UIFont
+    public var inputTextFont: UIKit.UIFont
+    public var inputErrorFont: UIKit.UIFont
+    public var buttonTitleFont: UIKit.UIFont
+    public var checkboxTitleFont: UIKit.UIFont
+    public var pickerTitleFont: UIKit.UIFont
+    public init(sectionTitleFont: UIKit.UIFont = Fonts.default.sectionTitleFont, primaryTextFont: UIKit.UIFont = Fonts.default.primaryTextFont, secondaryTextFont: UIKit.UIFont = Fonts.default.secondaryTextFont, inputTitleFont: UIKit.UIFont = Fonts.default.inputTitleFont, inputTextFont: UIKit.UIFont = Fonts.default.inputTextFont, inputErrorFont: UIKit.UIFont = Fonts.default.inputErrorFont, buttonTitleFont: UIKit.UIFont = Fonts.default.buttonTitleFont, checkboxTitleFont: UIKit.UIFont = Fonts.default.checkboxTitleFont, pickerTitleFont: UIKit.UIFont = Fonts.default.pickerTitleFont)
+    public static let `default`: PayPipes.Theme.Fonts
+  }
+}
+extension PayPipes.Theme {
+  public enum Sizes {
+    public static let paddingsXXS: CoreFoundation.CGFloat
+    public static let paddingsXS: CoreFoundation.CGFloat
+    public static let paddingsS: CoreFoundation.CGFloat
+    public static let paddingsM: CoreFoundation.CGFloat
+    public static let paddingsL: CoreFoundation.CGFloat
+    public static let cornersS: CoreFoundation.CGFloat
+    public static let cornersM: CoreFoundation.CGFloat
+    public static let cornersXL: CoreFoundation.CGFloat
+  }
+}
+public enum Version {
+  public static let marketingVersion: Swift.String
+  public static let major: Swift.Int
+  public static let minor: Swift.Int
+  public static let patch: Swift.Int
+  public static func isCompatible(with minimumVersion: Swift.String) -> Swift.Bool
+  public static var info: [Swift.String : Any] {
+    get
+  }
+}
+extension UIKit.UIColor {
+  convenience public init(lightHex: Swift.String, darkHex: Swift.String)
+  convenience public init(hex: Swift.String, alpha: CoreFoundation.CGFloat = 1.0)
+}
+public enum FlowType {
+  case cardPayment
+  case cardStorage
+  public static func == (a: PayPipes.FlowType, b: PayPipes.FlowType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CardTransactionError : PayPipes.SDKError {
+  case compromisedDevice
+  case canceled
+  case declined(PayPipes.CardTransactionDeclineCode)
+  case noSchemeForCurrency
+  case uknownTransactionState
+  case serverError(PayPipes.ServerError)
+  case invalidInput
+  public var code: Swift.Int {
+    get
+  }
+  public static func == (a: PayPipes.CardTransactionError, b: PayPipes.CardTransactionError) -> Swift.Bool
+}
+public enum SdkInitError : PayPipes.SDKError {
+  case compromisedDevice
+  public var code: Swift.Int {
+    get
+  }
+  public static func == (a: PayPipes.SdkInitError, b: PayPipes.SdkInitError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias CardTransactionResult = Swift.Result<PayPipes.CardTransactionDetails, PayPipes.CardTransactionError>
+public protocol SDKError : Swift.Equatable, Swift.Error {
+  var code: Swift.Int { get }
+}
+public struct BillingInfo : Swift.Equatable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(firstName: Swift.String, lastName: Swift.String, email: Swift.String, address: PayPipes.Address? = nil, phone: PayPipes.Phone? = nil)
+  #endif
+  public let firstName: Swift.String
+  public let lastName: Swift.String
+  public let email: Swift.String
+  public var address: PayPipes.Address?
+  public let phone: PayPipes.Phone?
+  public static func == (a: PayPipes.BillingInfo, b: PayPipes.BillingInfo) -> Swift.Bool
+}
+public struct Country : Swift.Equatable, Swift.Hashable, Swift.Codable, Swift.Identifiable, Swift.CustomStringConvertible {
+  public var id: Swift.String {
+    get
+  }
+  public let iso3166Alpha2: Swift.String
+  public let dialingCode: Swift.String
+  public var name: Swift.String {
+    get
+  }
+  public var flagEmoji: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public static let allAvailable: [PayPipes.Country]
+  public init(iso3166Alpha2: Swift.String)
+  public static func countries(forDialingCode input: Swift.String) -> [PayPipes.Country]
+  public static func == (a: PayPipes.Country, b: PayPipes.Country) -> Swift.Bool
+  public typealias ID = Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Phone : Swift.Equatable {
+  public let number: Swift.String?
+  public let countryCode: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(number: Swift.String?, countryCode: Swift.String?)
+  #endif
+  public static func == (a: PayPipes.Phone, b: PayPipes.Phone) -> Swift.Bool
+}
+@inlinable internal func assert(_ condition: @autoclosure () -> Swift.Bool, _ message: @autoclosure () -> Swift.String = "", file _: Swift.StaticString = "", line _: Swift.UInt = 0) {
+    Swift.assert(condition(), message(), file: "", line: 0)
+}
+@inlinable internal func precondition(_ condition: @autoclosure () -> Swift.Bool, _ message: @autoclosure () -> Swift.String = "", file _: Swift.StaticString = "", line _: Swift.UInt = 0) {
+    Swift.precondition(condition(), message(), file: "", line: 0)
+}
+@inlinable internal func assertionFailure(_ message: @autoclosure () -> Swift.String = "", file _: Swift.StaticString = "", line _: Swift.UInt = 0) {
+    Swift.assertionFailure(message(), file: "", line: 0)
+}
+@inlinable internal func preconditionFailure(_ message: @autoclosure () -> Swift.String = "", file _: Swift.StaticString = "", line _: Swift.UInt = 0) -> Swift.Never {
+    return Swift.preconditionFailure(message(), file: "", line: 0)
+}
+@inlinable internal func fatalError(_ message: @autoclosure () -> Swift.String = "", file _: Swift.StaticString = "", line _: Swift.UInt = 0) -> Swift.Never {
+    return Swift.fatalError(message(), file: "", line: 0)
+}
+public struct Money : Swift.Equatable {
+  public var amount: Foundation.Decimal
+  public let currency: Swift.String
+  public init(amount: Foundation.Decimal, currency: Swift.String)
+  public static func == (a: PayPipes.Money, b: PayPipes.Money) -> Swift.Bool
+}
+extension PayPipes.Money {
+  public static let zero: PayPipes.Money
+  public var isPositive: Swift.Bool {
+    get
+  }
+  public var isNegative: Swift.Bool {
+    get
+  }
+  public func abs() -> PayPipes.Money
+  public func negative() -> PayPipes.Money
+  public func negativeMultiply() -> PayPipes.Money
+  public func multiplied(_ factor: Foundation.Decimal) -> PayPipes.Money
+}
+extension PayPipes.Money {
+  public var formattedValue: Swift.String {
+    get
+  }
+}
+public enum PayPipesUI {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func buildCardTransactionController(with configuration: PayPipes.Configuration, transaction: PayPipes.CardTransaction, completion: @escaping (PayPipes.CardTransactionResult) -> Swift.Void) throws -> UIKit.UIViewController
+  #endif
+}
+public enum Environment {
+  case sandbox
+  case production
+  public static func == (a: PayPipes.Environment, b: PayPipes.Environment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Configuration {
+  public init(clientId: Swift.String, clientSecret: Swift.String, companyName: Swift.String, termsUrl: Foundation.URL, environment: PayPipes.Environment, theme: PayPipes.Theme = .default, isLoggingEnabled: Swift.Bool = false, isScreenCaptureEnabled: Swift.Bool = false)
+  public let clientId: Swift.String
+  public let clientSecret: Swift.String
+  public let companyName: Swift.String
+  public let termsUrl: Foundation.URL
+  public let environment: PayPipes.Environment
+  public let isLoggingEnabled: Swift.Bool
+  public let theme: PayPipes.Theme
+  public let isScreenCaptureEnabled: Swift.Bool
+}
+extension PayPipes.ServerError.ServerErrorType : Swift.Equatable {}
+extension PayPipes.ServerError.ServerErrorType : Swift.Hashable {}
+extension PayPipes.ServerError.ServerErrorType : Swift.RawRepresentable {}
+extension PayPipes.PayPipesCardTransactionController : Swift.Sendable {}
+extension PayPipes.CardScheme : Swift.Equatable {}
+extension PayPipes.CardScheme : Swift.Hashable {}
+extension PayPipes.CardScheme : Swift.RawRepresentable {}
+extension PayPipes.CardTransactionDeclineCode : Swift.Equatable {}
+extension PayPipes.CardTransactionDeclineCode : Swift.Hashable {}
+extension PayPipes.CardTransactionDeclineCode : Swift.RawRepresentable {}
+extension PayPipes.FlowType : Swift.Equatable {}
+extension PayPipes.FlowType : Swift.Hashable {}
+extension PayPipes.SdkInitError : Swift.Hashable {}
+extension PayPipes.Environment : Swift.Equatable {}
+extension PayPipes.Environment : Swift.Hashable {}
