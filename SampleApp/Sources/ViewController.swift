@@ -702,9 +702,9 @@ class ViewController: UIViewController {
 // MARK: - Constants
 
 private enum Constants {
-    static let clientId = "98779e58-ff64-459d-bed8-e7ec423d1a9c"
-    static let clientSecret = "Oemmjba7zxVC5RqCa509YkrXVS2pMnx5y8HjCh9W"
-    static let companyName = "My company"
+    static let clientId = "[YOUR CLIENT ID]"
+    static let clientSecret = "[YOUR CLIENT SECRET]"
+    static let companyName = "[YOUR COMPANY NAME]"
     static let termsUrlString = "https://www.paypipes.com"
 
     static let defaultAmount = "10"
@@ -714,11 +714,11 @@ private enum Constants {
     static let defaultEmail = "john.smith@example.com"
 
     static let sampleAddress = Address(
-        street: "123 Main Street",
-        city: "New York",
-        state: "NY",
-        postCode: "10001",
+        street: "123 Fake Street",
+        city: "Test City",
+        state: "TS",
+        postCode: "00000",
         country: "US"
     )
-    static let samplePhone = Phone(number: "730556448", countryCode: "+420")
+    static let samplePhone = Phone(number: "5550100", countryCode: "+1")
 }
