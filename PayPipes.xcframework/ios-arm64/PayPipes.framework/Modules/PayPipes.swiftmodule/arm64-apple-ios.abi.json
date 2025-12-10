@@ -16955,91 +16955,91 @@
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 2110,
+      "offset": 6724,
       "length": 35,
       "value": "\"card.form.card_holder.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 2284,
+      "offset": 6898,
       "length": 35,
       "value": "\"card.form.card_number.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 2454,
+      "offset": 7068,
       "length": 30,
       "value": "\"card.form.expiry.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 2650,
+      "offset": 7264,
       "length": 27,
       "value": "\"card.form.cvv.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 2833,
+      "offset": 7447,
       "length": 27,
       "value": "\"card.form.save_card.title\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 3328,
+      "offset": 7942,
       "length": 38,
       "value": "\"card.form.billing_info.country.title\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 3433,
+      "offset": 8047,
       "length": 44,
       "value": "\"card.form.billing_info.country.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 3609,
+      "offset": 8223,
       "length": 36,
       "value": "\"card.form.billing_info.state.title\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 3712,
+      "offset": 8326,
       "length": 42,
       "value": "\"card.form.billing_info.state.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 3893,
+      "offset": 8507,
       "length": 43,
       "value": "\"card.form.billing_info.street.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 4071,
+      "offset": 8685,
       "length": 41,
       "value": "\"card.form.billing_info.city.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
-      "offset": 4281,
+      "offset": 8895,
       "length": 48,
       "value": "\"card.form.billing_info.postal_code.placeholder\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "BooleanLiteral",
-      "offset": 35828,
+      "offset": 35892,
       "length": 5,
       "value": "false"
     },
@@ -17377,7 +17377,7 @@
       "kind": "StringLiteral",
       "offset": 320,
       "length": 7,
-      "value": "\"1.0.0\""
+      "value": "\"1.0.1\""
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
@@ -17398,7 +17398,7 @@
       "kind": "IntegerLiteral",
       "offset": 463,
       "length": 1,
-      "value": "0"
+      "value": "1"
     },
     {
       "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",

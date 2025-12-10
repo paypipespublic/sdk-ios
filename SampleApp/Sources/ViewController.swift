@@ -720,5 +720,5 @@ private enum Constants {
         postCode: "00000",
         country: "US"
     )
-    static let samplePhone = Phone(number: "5550100", countryCode: "+1")
+    static let samplePhone = Phone(number: "777777777", countryCode: "+420")
 }
