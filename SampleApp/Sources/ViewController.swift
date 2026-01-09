@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     private var amount = Constants.defaultAmount
     private var billingAddressRequired = false
     private var billingAddressProvided = false
+    private var isBusinessCustomer = false
     private var isCustomThemeEnabled = false
 
     // Billing info state
@@ -170,6 +171,15 @@ class ViewController: UIViewController {
         return switchControl
     }()
 
+    private lazy var businessCustomerSwitch: UISwitch = {
+        let switchControl = UISwitch()
+        switchControl.isOn = isBusinessCustomer
+        switchControl.onTintColor = UIColor(hex: "4CAF50")
+        switchControl.addTarget(self, action: #selector(businessCustomerChanged), for: .valueChanged)
+        switchControl.translatesAutoresizingMaskIntoConstraints = false
+        return switchControl
+    }()
+
     private lazy var billingAddressRequiredRow: UIView = createSwitchRow(
         title: "Billing address required",
         subtitle: "Billing address required during purchase",
@@ -182,10 +192,18 @@ class ViewController: UIViewController {
         switchControl: billingAddressProvidedSwitch
     )
 
+    private lazy var businessCustomerRow: UIView = createSwitchRow(
+        title: "Business customer",
+        subtitle: "Set legal entity to business",
+        switchControl: businessCustomerSwitch
+    )
+
     private lazy var billingInfoContainer: UIView = {
         let divider1 = createDivider()
         let divider2 = createDivider()
 
+        let divider3 = createDivider()
+        
         let stack = UIStackView(arrangedSubviews: [
             firstNameTextField,
             lastNameTextField,
@@ -193,7 +211,9 @@ class ViewController: UIViewController {
             divider1,
             billingAddressRequiredRow,
             divider2,
-            billingAddressProvidedRow
+            billingAddressProvidedRow,
+            divider3,
+            businessCustomerRow
         ])
         stack.axis = .vertical
         stack.spacing = 12
@@ -450,7 +470,8 @@ class ViewController: UIViewController {
             lastName: lastName,
             email: email,
             address: billingAddressProvided ? Constants.sampleAddress : nil,
-            phone: Constants.samplePhone
+            phone: Constants.samplePhone,
+            legalEntity: isBusinessCustomer ? .business : .private
         )
     }
 
@@ -528,6 +549,10 @@ class ViewController: UIViewController {
 
     @objc private func billingAddressProvidedChanged() {
         billingAddressProvided = billingAddressProvidedSwitch.isOn
+    }
+
+    @objc private func businessCustomerChanged() {
+        isBusinessCustomer = businessCustomerSwitch.isOn
     }
 
     @objc private func firstNameChanged() {

@@ -77,6 +77,18 @@ struct SwiftUISampleView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
+
+                    Divider()
+
+                    Toggle(isOn: $isBusinessCustomer) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Business customer")
+                                .font(.system(size: 16, weight: .medium))
+                            Text("Set legal entity to business")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
                 .padding()
                 .background(Color(UIColor.secondarySystemBackground))
@@ -170,6 +182,7 @@ struct SwiftUISampleView: View {
     @State private var amount: String = Constants.defaultAmount
     @State private var billingAddressRequired: Bool = false
     @State private var billingAddressProvided: Bool = false
+    @State private var isBusinessCustomer: Bool = false
     @State private var firstName: String = Constants.defaultFirstName
     @State private var lastName: String = Constants.defaultLastName
     @State private var email: String = Constants.defaultEmail
@@ -257,7 +270,8 @@ struct SwiftUISampleView: View {
             lastName: lastName,
             email: email,
             address: billingAddressProvided ? Constants.sampleAddress : nil,
-            phone: Constants.samplePhone
+            phone: Constants.samplePhone,
+            legalEntity: isBusinessCustomer ? .business : .private
         )
     }
 

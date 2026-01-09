@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target x86_64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayPipes
-// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AVFoundation
 import CryptoKit
 import Darwin
@@ -348,19 +348,35 @@ public enum SdkInitError : PayPipes.SDKError {
     get
   }
 }
+public enum LegalEntity : Swift.String, Swift.CaseIterable, Swift.Codable {
+  case `private`
+  case business
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias AllCases = [PayPipes.LegalEntity]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PayPipes.LegalEntity] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public typealias CardTransactionResult = Swift.Result<PayPipes.CardTransactionDetails, PayPipes.CardTransactionError>
 public protocol SDKError : Swift.Equatable, Swift.Error {
   var code: Swift.Int { get }
 }
 public struct BillingInfo : Swift.Equatable {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(firstName: Swift.String, lastName: Swift.String, email: Swift.String, address: PayPipes.Address? = nil, phone: PayPipes.Phone? = nil)
+  public init(firstName: Swift.String, lastName: Swift.String, email: Swift.String, address: PayPipes.Address? = nil, phone: PayPipes.Phone? = nil, legalEntity: PayPipes.LegalEntity = .private)
   #endif
   public let firstName: Swift.String
   public let lastName: Swift.String
   public let email: Swift.String
   public var address: PayPipes.Address?
   public let phone: PayPipes.Phone?
+  public let legalEntity: PayPipes.LegalEntity
   public static func == (a: PayPipes.BillingInfo, b: PayPipes.BillingInfo) -> Swift.Bool
 }
 public struct Country : Swift.Equatable, Swift.Hashable, Swift.Codable, Swift.Identifiable, Swift.CustomStringConvertible {
@@ -475,5 +491,8 @@ extension PayPipes.CardTransactionDeclineCode : Swift.RawRepresentable {}
 extension PayPipes.FlowType : Swift.Equatable {}
 extension PayPipes.FlowType : Swift.Hashable {}
 extension PayPipes.SdkInitError : Swift.Hashable {}
+extension PayPipes.LegalEntity : Swift.Equatable {}
+extension PayPipes.LegalEntity : Swift.Hashable {}
+extension PayPipes.LegalEntity : Swift.RawRepresentable {}
 extension PayPipes.Environment : Swift.Equatable {}
 extension PayPipes.Environment : Swift.Hashable {}

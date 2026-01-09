@@ -12292,6 +12292,324 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "LegalEntity",
+        "printedName": "LegalEntity",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "private",
+            "printedName": "private",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PayPipes.LegalEntity.Type) -> PayPipes.LegalEntity",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LegalEntity",
+                    "printedName": "PayPipes.LegalEntity",
+                    "usr": "s:8PayPipes11LegalEntityO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PayPipes.LegalEntity.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LegalEntity",
+                        "printedName": "PayPipes.LegalEntity",
+                        "usr": "s:8PayPipes11LegalEntityO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PayPipes11LegalEntityO7privateyA2CmF",
+            "mangledName": "$s8PayPipes11LegalEntityO7privateyA2CmF",
+            "moduleName": "PayPipes"
+          },
+          {
+            "kind": "Var",
+            "name": "business",
+            "printedName": "business",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PayPipes.LegalEntity.Type) -> PayPipes.LegalEntity",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LegalEntity",
+                    "printedName": "PayPipes.LegalEntity",
+                    "usr": "s:8PayPipes11LegalEntityO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PayPipes.LegalEntity.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LegalEntity",
+                        "printedName": "PayPipes.LegalEntity",
+                        "usr": "s:8PayPipes11LegalEntityO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PayPipes11LegalEntityO8businessyA2CmF",
+            "mangledName": "$s8PayPipes11LegalEntityO8businessyA2CmF",
+            "moduleName": "PayPipes"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "PayPipes.LegalEntity?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LegalEntity",
+                    "printedName": "PayPipes.LegalEntity",
+                    "usr": "s:8PayPipes11LegalEntityO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PayPipes11LegalEntityO8rawValueACSgSS_tcfc",
+            "mangledName": "$s8PayPipes11LegalEntityO8rawValueACSgSS_tcfc",
+            "moduleName": "PayPipes",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PayPipes11LegalEntityO8rawValueSSvp",
+            "mangledName": "$s8PayPipes11LegalEntityO8rawValueSSvp",
+            "moduleName": "PayPipes",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PayPipes11LegalEntityO8rawValueSSvg",
+                "mangledName": "$s8PayPipes11LegalEntityO8rawValueSSvg",
+                "moduleName": "PayPipes",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "allCases",
+            "printedName": "allCases",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[PayPipes.LegalEntity]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LegalEntity",
+                    "printedName": "PayPipes.LegalEntity",
+                    "usr": "s:8PayPipes11LegalEntityO"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PayPipes11LegalEntityO8allCasesSayACGvpZ",
+            "mangledName": "$s8PayPipes11LegalEntityO8allCasesSayACGvpZ",
+            "moduleName": "PayPipes",
+            "static": true,
+            "implicit": true,
+            "declAttributes": [
+              "Nonisolated"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[PayPipes.LegalEntity]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LegalEntity",
+                        "printedName": "PayPipes.LegalEntity",
+                        "usr": "s:8PayPipes11LegalEntityO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PayPipes11LegalEntityO8allCasesSayACGvgZ",
+                "mangledName": "$s8PayPipes11LegalEntityO8allCasesSayACGvgZ",
+                "moduleName": "PayPipes",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:8PayPipes11LegalEntityO",
+        "mangledName": "$s8PayPipes11LegalEntityO",
+        "moduleName": "PayPipes",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CaseIterable",
+            "printedName": "CaseIterable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "AllCases",
+                "printedName": "AllCases",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[PayPipes.LegalEntity]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LegalEntity",
+                        "printedName": "PayPipes.LegalEntity",
+                        "usr": "s:8PayPipes11LegalEntityO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s12CaseIterableP",
+            "mangledName": "$ss12CaseIterableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -12482,7 +12800,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(firstName:lastName:email:address:phone:)",
+            "printedName": "init(firstName:lastName:email:address:phone:legalEntity:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -12537,11 +12855,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LegalEntity",
+                "printedName": "PayPipes.LegalEntity",
+                "hasDefaultArg": true,
+                "usr": "s:8PayPipes11LegalEntityO"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8PayPipes11BillingInfoV9firstName04lastF05email7address5phoneACSS_S2SAA7AddressVSgAA5PhoneVSgtcfc",
-            "mangledName": "$s8PayPipes11BillingInfoV9firstName04lastF05email7address5phoneACSS_S2SAA7AddressVSgAA5PhoneVSgtcfc",
+            "usr": "s:8PayPipes11BillingInfoV9firstName04lastF05email7address5phone11legalEntityACSS_S2SAA7AddressVSgAA5PhoneVSgAA05LegalL0Otcfc",
+            "mangledName": "$s8PayPipes11BillingInfoV9firstName04lastF05email7address5phone11legalEntityACSS_S2SAA7AddressVSgAA5PhoneVSgAA05LegalL0Otcfc",
             "moduleName": "PayPipes",
             "declAttributes": [
               "AccessControl",
@@ -12850,6 +13175,51 @@
                 "declKind": "Accessor",
                 "usr": "s:8PayPipes11BillingInfoV5phoneAA5PhoneVSgvg",
                 "mangledName": "$s8PayPipes11BillingInfoV5phoneAA5PhoneVSgvg",
+                "moduleName": "PayPipes",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "legalEntity",
+            "printedName": "legalEntity",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LegalEntity",
+                "printedName": "PayPipes.LegalEntity",
+                "usr": "s:8PayPipes11LegalEntityO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PayPipes11BillingInfoV11legalEntityAA05LegalF0Ovp",
+            "mangledName": "$s8PayPipes11BillingInfoV11legalEntityAA05LegalF0Ovp",
+            "moduleName": "PayPipes",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LegalEntity",
+                    "printedName": "PayPipes.LegalEntity",
+                    "usr": "s:8PayPipes11LegalEntityO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PayPipes11BillingInfoV11legalEntityAA05LegalF0Ovg",
+                "mangledName": "$s8PayPipes11BillingInfoV11legalEntityAA05LegalF0Ovg",
                 "moduleName": "PayPipes",
                 "implicit": true,
                 "accessorKind": "get"
@@ -15903,2905 +16273,2919 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PublicRsaKey.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PublicRsaKey.swift",
       "kind": "StringLiteral",
       "offset": 486,
       "length": 3,
       "value": "\"n\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PublicRsaKey.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PublicRsaKey.swift",
       "kind": "StringLiteral",
       "offset": 514,
       "length": 3,
       "value": "\"e\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PublicRsaKey.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PublicRsaKey.swift",
       "kind": "StringLiteral",
       "offset": 594,
       "length": 12,
       "value": "\"expires_at\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardExpiryValidator.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1061,
-      "length": 2,
-      "value": "20"
-    },
-    {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4182,
       "length": 7,
       "value": "100000"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4221,
       "length": 7,
       "value": "100001"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4261,
       "length": 7,
       "value": "100002"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4307,
       "length": 7,
       "value": "100003"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4343,
       "length": 7,
       "value": "100004"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4378,
       "length": 7,
       "value": "100005"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4415,
       "length": 7,
       "value": "100006"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4452,
       "length": 7,
       "value": "100007"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4490,
       "length": 7,
       "value": "100008"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4527,
       "length": 7,
       "value": "200000"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4562,
       "length": 7,
       "value": "200001"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4601,
       "length": 7,
       "value": "200002"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4646,
       "length": 7,
       "value": "200003"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4687,
       "length": 7,
       "value": "200004"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4725,
       "length": 7,
       "value": "200005"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4767,
       "length": 7,
       "value": "200006"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4804,
       "length": 7,
       "value": "200007"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4842,
       "length": 7,
       "value": "200008"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4885,
       "length": 7,
       "value": "200009"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4934,
       "length": 7,
       "value": "200010"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 4972,
       "length": 7,
       "value": "200011"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5011,
       "length": 7,
       "value": "200012"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5048,
       "length": 7,
       "value": "200013"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5086,
       "length": 7,
       "value": "200014"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5125,
       "length": 7,
       "value": "200015"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5162,
       "length": 7,
       "value": "200016"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5201,
       "length": 7,
       "value": "200017"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5244,
       "length": 7,
       "value": "200018"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5293,
       "length": 7,
       "value": "200019"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5332,
       "length": 7,
       "value": "200020"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5369,
       "length": 7,
       "value": "200021"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5412,
       "length": 7,
       "value": "200022"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5459,
       "length": 7,
       "value": "200023"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5499,
       "length": 7,
       "value": "200024"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5541,
       "length": 7,
       "value": "200025"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5586,
       "length": 7,
       "value": "200026"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5633,
       "length": 7,
       "value": "200027"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5681,
       "length": 7,
       "value": "200028"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5721,
       "length": 7,
       "value": "200029"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5758,
       "length": 7,
       "value": "200030"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5800,
       "length": 7,
       "value": "200031"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5850,
       "length": 7,
       "value": "200032"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5897,
       "length": 7,
       "value": "200033"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5948,
       "length": 7,
       "value": "200034"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 5996,
       "length": 7,
       "value": "200035"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6044,
       "length": 7,
       "value": "200036"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6086,
       "length": 7,
       "value": "200037"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6134,
       "length": 7,
       "value": "200038"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6180,
       "length": 7,
       "value": "200039"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6221,
       "length": 7,
       "value": "200040"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6268,
       "length": 7,
       "value": "200044"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6320,
       "length": 7,
       "value": "200045"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6359,
       "length": 7,
       "value": "200046"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6397,
       "length": 7,
       "value": "200047"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6433,
       "length": 7,
       "value": "200048"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6471,
       "length": 7,
       "value": "200049"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6518,
       "length": 7,
       "value": "200050"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6555,
       "length": 7,
       "value": "200051"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6597,
       "length": 7,
       "value": "200052"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6644,
       "length": 7,
       "value": "200053"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6685,
       "length": 7,
       "value": "200054"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6723,
       "length": 7,
       "value": "200055"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6764,
       "length": 7,
       "value": "200056"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6806,
       "length": 7,
       "value": "200057"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6845,
       "length": 7,
       "value": "200058"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6892,
       "length": 7,
       "value": "200059"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6941,
       "length": 7,
       "value": "200060"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 6987,
       "length": 7,
       "value": "200061"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7029,
       "length": 7,
       "value": "200062"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7068,
       "length": 7,
       "value": "200063"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7111,
       "length": 7,
       "value": "200064"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7156,
       "length": 7,
       "value": "200065"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7199,
       "length": 7,
       "value": "200066"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7245,
       "length": 7,
       "value": "200067"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7297,
       "length": 7,
       "value": "200068"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7339,
       "length": 7,
       "value": "200069"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7390,
       "length": 7,
       "value": "200070"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7440,
       "length": 7,
       "value": "200071"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7490,
       "length": 7,
       "value": "200072"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7529,
       "length": 7,
       "value": "200073"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7566,
       "length": 7,
       "value": "200074"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7606,
       "length": 7,
       "value": "200075"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7655,
       "length": 7,
       "value": "200076"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7703,
       "length": 7,
       "value": "200077"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7739,
       "length": 7,
       "value": "200078"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7777,
       "length": 7,
       "value": "200079"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7817,
       "length": 7,
       "value": "200080"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7857,
       "length": 7,
       "value": "200081"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7899,
       "length": 7,
       "value": "200090"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7950,
       "length": 7,
       "value": "200082"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 7989,
       "length": 7,
       "value": "200083"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 8031,
       "length": 7,
       "value": "999000"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/ServiceError.swift",
       "kind": "IntegerLiteral",
       "offset": 8062,
       "length": 7,
       "value": "999999"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
       "kind": "StringLiteral",
       "offset": 240,
       "length": 10,
       "value": "\"Approved\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
       "kind": "StringLiteral",
       "offset": 271,
       "length": 10,
       "value": "\"Declined\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
       "kind": "StringLiteral",
       "offset": 302,
       "length": 11,
       "value": "\"Cancelled\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
       "kind": "StringLiteral",
       "offset": 333,
       "length": 9,
       "value": "\"Waiting\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/TransactionStatus.swift",
       "kind": "StringLiteral",
       "offset": 362,
       "length": 9,
       "value": "\"Pending\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "StringLiteral",
       "offset": 427,
       "length": 30,
       "value": "\"paypipes.cardscanner.session\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "StringLiteral",
       "offset": 510,
       "length": 29,
       "value": "\"paypipes.cardscanner.vision\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "FloatLiteral",
       "offset": 5784,
       "length": 4,
       "value": "0.10"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 5975,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 6035,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 6097,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 6185,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7047,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7058,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7068,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7079,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7116,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7127,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7137,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7148,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "FloatLiteral",
       "offset": 7183,
       "length": 3,
       "value": "1.2"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "StringLiteral",
       "offset": 7544,
       "length": 14,
       "value": "\"inputTopLeft\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7582,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "StringLiteral",
       "offset": 7599,
       "length": 15,
       "value": "\"inputTopRight\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7638,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "StringLiteral",
       "offset": 7655,
       "length": 18,
       "value": "\"inputBottomRight\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7697,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "StringLiteral",
       "offset": 7714,
       "length": 17,
       "value": "\"inputBottomLeft\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "IntegerLiteral",
       "offset": 7755,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScanner.swift",
       "kind": "StringLiteral",
       "offset": 7812,
       "length": 24,
       "value": "\"CIPerspectiveTransform\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "StringLiteral",
       "offset": 532,
       "length": 7,
       "value": "\"xmark\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 699,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "StringLiteral",
       "offset": 851,
       "length": 28,
       "value": "\"scanner.align_prompt.title\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 1161,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "FloatLiteral",
       "offset": 1330,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 1375,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 1438,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardScanner\/CardScannerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 1517,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardHolderValidator.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardHolderValidator.swift",
       "kind": "IntegerLiteral",
-      "offset": 962,
+      "offset": 1068,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardHolderValidator.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardHolderValidator.swift",
       "kind": "IntegerLiteral",
-      "offset": 1046,
+      "offset": 1152,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "StringLiteral",
       "offset": 691,
       "length": 10,
       "value": "\"order_id\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "StringLiteral",
       "offset": 794,
       "length": 12,
       "value": "\"return_url\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "StringLiteral",
       "offset": 834,
       "length": 14,
       "value": "\"callback_url\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "StringLiteral",
       "offset": 874,
       "length": 12,
       "value": "\"cancel_url\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "StringLiteral",
       "offset": 936,
       "length": 16,
       "value": "\"customer_token\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "StringLiteral",
       "offset": 1073,
       "length": 26,
       "value": "\"save_card_for_future_use\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "StringLiteral",
       "offset": 1130,
       "length": 17,
       "value": "\"billing_address\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "BooleanLiteral",
       "offset": 1556,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "BooleanLiteral",
       "offset": 1600,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseRequest.swift",
       "kind": "BooleanLiteral",
       "offset": 1638,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Request.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Request.swift",
       "kind": "FloatLiteral",
       "offset": 952,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Request.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Request.swift",
       "kind": "Dictionary",
       "offset": 1428,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Extensions\/UIViewController+Alert.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Extensions\/UIViewController+Alert.swift",
       "kind": "StringLiteral",
       "offset": 338,
       "length": 29,
       "value": "\"general.alert.dismiss.title\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 6724,
       "length": 35,
       "value": "\"card.form.card_holder.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 6898,
       "length": 35,
       "value": "\"card.form.card_number.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 7068,
       "length": 30,
       "value": "\"card.form.expiry.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 7264,
       "length": 27,
       "value": "\"card.form.cvv.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 7447,
       "length": 27,
       "value": "\"card.form.save_card.title\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 7942,
       "length": 38,
       "value": "\"card.form.billing_info.country.title\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 8047,
       "length": 44,
       "value": "\"card.form.billing_info.country.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 8223,
       "length": 36,
       "value": "\"card.form.billing_info.state.title\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 8326,
       "length": 42,
       "value": "\"card.form.billing_info.state.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 8507,
       "length": 43,
       "value": "\"card.form.billing_info.street.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 8685,
       "length": 41,
       "value": "\"card.form.billing_info.city.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "StringLiteral",
       "offset": 8895,
       "length": 48,
       "value": "\"card.form.billing_info.postal_code.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "BooleanLiteral",
-      "offset": 35892,
+      "offset": 35893,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/CardTransaction.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/CardTransaction.swift",
       "kind": "BooleanLiteral",
       "offset": 811,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PatchCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PatchCustomerRequest.swift",
       "kind": "StringLiteral",
       "offset": 727,
       "length": 11,
       "value": "\"post_code\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessResponse.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessResponse.swift",
       "kind": "StringLiteral",
       "offset": 1445,
       "length": 21,
       "value": "\"purchase_request_id\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CustomerResponse.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CustomerResponse.swift",
       "kind": "StringLiteral",
       "offset": 705,
       "length": 16,
       "value": "\"customer_token\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CustomerResponse.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CustomerResponse.swift",
       "kind": "StringLiteral",
       "offset": 803,
       "length": 11,
       "value": "\"post_code\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardNumberValidator.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardNumberValidator.swift",
       "kind": "IntegerLiteral",
       "offset": 844,
       "length": 2,
       "value": "19"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardNumberValidator.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Validation\/CardNumberValidator.swift",
       "kind": "IntegerLiteral",
       "offset": 924,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/CardScheme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/CardScheme.swift",
       "kind": "StringLiteral",
       "offset": 870,
       "length": 18,
       "value": "\"cartes_bancaires\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
       "kind": "StringLiteral",
       "offset": 541,
       "length": 9,
       "value": "\"GENERAL\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
       "kind": "StringLiteral",
       "offset": 628,
       "length": 11,
       "value": "\"CARD_DATA\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
       "kind": "StringLiteral",
       "offset": 710,
       "length": 12,
       "value": "\"CARD_LIMIT\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
       "kind": "StringLiteral",
       "offset": 814,
       "length": 12,
       "value": "\"RISK_FRAUD\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
       "kind": "StringLiteral",
       "offset": 909,
       "length": 5,
       "value": "\"3DS\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
       "kind": "StringLiteral",
       "offset": 993,
       "length": 20,
       "value": "\"INSUFFICIENT_FUNDS\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardTransactionDeclineCode.swift",
       "kind": "StringLiteral",
       "offset": 1098,
       "length": 9,
       "value": "\"UNKNOWN\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 321,
       "length": 5,
       "value": "\"GET\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 343,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 365,
       "length": 5,
       "value": "\"PUT\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 388,
       "length": 7,
       "value": "\"PATCH\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 414,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3015,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "Dictionary",
       "offset": 3102,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3214,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3510,
       "length": 97,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3542,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3574,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3606,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3624,
       "length": 80,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3635,
       "length": 1,
       "value": "\"\/\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3649,
       "length": 1,
       "value": "\" (\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3665,
       "length": 1,
       "value": "\"; build:\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3684,
       "length": 1,
       "value": "\"; iOS \""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "StringLiteral",
       "offset": 3702,
       "length": 1,
       "value": "\")\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Network\/Service.swift",
       "kind": "BooleanLiteral",
       "offset": 4287,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "StringLiteral",
       "offset": 7191,
       "length": 9,
       "value": "\"#6D6FFF\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "StringLiteral",
       "offset": 7211,
       "length": 9,
       "value": "\"#999AFF\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10351,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10422,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10493,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10565,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10637,
       "length": 2,
       "value": "32"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10707,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10777,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/Theme.swift",
       "kind": "IntegerLiteral",
       "offset": 10849,
       "length": 2,
       "value": "24"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseResponse.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseResponse.swift",
       "kind": "StringLiteral",
       "offset": 367,
       "length": 14,
       "value": "\"redirect_url\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseResponse.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseResponse.swift",
       "kind": "StringLiteral",
       "offset": 407,
       "length": 12,
       "value": "\"expires_at\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseResponse.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/PurchaseResponse.swift",
       "kind": "StringLiteral",
       "offset": 453,
       "length": 21,
       "value": "\"purchase_request_id\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
       "kind": "StringLiteral",
       "offset": 320,
       "length": 7,
-      "value": "\"1.0.1\""
+      "value": "\"1.0.2\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
       "kind": "IntegerLiteral",
       "offset": 399,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
       "kind": "IntegerLiteral",
       "offset": 431,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
       "kind": "IntegerLiteral",
       "offset": 463,
       "length": 1,
-      "value": "1"
+      "value": "2"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 406,
       "length": 7,
       "value": "\"DEBUG\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 434,
       "length": 6,
       "value": "\"INFO\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 464,
       "length": 9,
       "value": "\"WARNING\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 495,
       "length": 7,
       "value": "\"ERROR\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 527,
       "length": 10,
       "value": "\"CRITICAL\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1003,
       "length": 9,
       "value": "\"Network\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1039,
       "length": 12,
       "value": "\"Validation\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1076,
       "length": 10,
       "value": "\"Security\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1116,
       "length": 4,
       "value": "\"UI\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1148,
       "length": 13,
       "value": "\"CardScanner\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1188,
       "length": 12,
       "value": "\"Encryption\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1224,
       "length": 9,
       "value": "\"General\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Extensions\/UIColor+Hex.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Extensions\/UIColor+Hex.swift",
       "kind": "FloatLiteral",
       "offset": 1404,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/DeviceIntegrity.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/DeviceIntegrity.swift",
       "kind": "Array",
       "offset": 471,
       "length": 386,
       "value": "[\"\/Applications\/Cydia.app\", \"\/Library\/MobileSubstrate\/MobileSubstrate.dylib\", \"\/bin\/bash\", \"\/usr\/sbin\/sshd\", \"\/etc\/apt\", \"\/private\/var\/lib\/apt\/\", \"\/Applications\/Sileo.app\", \"\/var\/cache\/apt\", \"\/var\/lib\/cydia\", \"\/var\/log\/syslog\", \"\/var\/tmp\/cydia.log\", \"\/bin\/sh\", \"\/usr\/bin\/ssh\"]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/DeviceIntegrity.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/DeviceIntegrity.swift",
       "kind": "Array",
       "offset": 999,
       "length": 53,
       "value": "[\"\/Applications\", \"\/var\/stash\"]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1473,
+      "offset": 1590,
       "length": 12,
       "value": "\"first_name\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1510,
+      "offset": 1627,
       "length": 11,
       "value": "\"last_name\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1567,
+      "offset": 1684,
       "length": 13,
       "value": "\"jp_fullname\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1662,
+      "offset": 1779,
       "length": 11,
       "value": "\"post_code\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1720,
+      "offset": 1837,
       "length": 12,
       "value": "\"phone_code\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1779,
+      "offset": 1896,
       "length": 14,
       "value": "\"reference_id\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1821,
+      "offset": 1938,
       "length": 15,
       "value": "\"date_of_birth\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InputContainerView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CreateCustomerRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1981,
+      "length": 14,
+      "value": "\"legal_entity\""
+    },
+    {
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InputContainerView.swift",
       "kind": "FloatLiteral",
       "offset": 386,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InputContainerView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InputContainerView.swift",
       "kind": "FloatLiteral",
       "offset": 968,
       "length": 3,
       "value": "0.2"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InputContainerView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InputContainerView.swift",
       "kind": "BooleanLiteral",
       "offset": 1915,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormFieldSecure.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormFieldSecure.swift",
       "kind": "StringLiteral",
       "offset": 250,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Constants.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 206,
       "length": 14,
       "value": "\"\/v2\/merchant\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Constants.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 260,
       "length": 13,
       "value": "\"\/v2\/payment\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Constants.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 307,
       "length": 33,
       "value": "\"https:\/\/paypipes.com\/sdk-return\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 1182,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2210,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "FloatLiteral",
       "offset": 2306,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 2358,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 2369,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 2406,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2444,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2613,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 2746,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2784,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2942,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 3395,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 3578,
       "length": 2,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "StringLiteral",
       "offset": 3644,
       "length": 7,
       "value": "\"xmark\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 3873,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4124,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4183,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "Array",
       "offset": 4256,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4399,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4503,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4553,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4737,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4824,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 4994,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 5117,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 5339,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/ThreeDS\/ThreeDSWebViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 5382,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
       "kind": "BooleanLiteral",
       "offset": 581,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
       "kind": "BooleanLiteral",
       "offset": 678,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
       "kind": "BooleanLiteral",
       "offset": 733,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
       "kind": "BooleanLiteral",
       "offset": 898,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
       "kind": "BooleanLiteral",
       "offset": 1241,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
       "kind": "Array",
       "offset": 1340,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/FormStackView.swift",
       "kind": "Dictionary",
       "offset": 1391,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SubmitButtonView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SubmitButtonView.swift",
       "kind": "BooleanLiteral",
       "offset": 674,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SubmitButtonView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SubmitButtonView.swift",
       "kind": "BooleanLiteral",
       "offset": 964,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SubmitButtonView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SubmitButtonView.swift",
       "kind": "BooleanLiteral",
       "offset": 1031,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 466,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "StringLiteral",
       "offset": 788,
       "length": 8,
       "value": "\"square\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "StringLiteral",
       "offset": 840,
       "length": 18,
       "value": "\"checkmark.square\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1171,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 1274,
       "length": 2,
       "value": "24"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 1339,
       "length": 2,
       "value": "24"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 1642,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1669,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CheckboxFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 2442,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CardNumberFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CardNumberFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 258,
       "length": 2,
       "value": "19"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CardNumberFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CardNumberFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 289,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CardSchemesHeaderView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/CardSchemesHeaderView.swift",
       "kind": "BooleanLiteral",
       "offset": 367,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 753,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 813,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 1106,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1166,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1197,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1570,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1807,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 2051,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 2089,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 2397,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 2777,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 2938,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 3067,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 3699,
       "length": 2,
       "value": "36"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 3772,
       "length": 2,
       "value": "24"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 3846,
       "length": 2,
       "value": "24"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "StringLiteral",
       "offset": 4101,
       "length": 20,
       "value": "\"general.done.title\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/BaseFormFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 4509,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AccessToken.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/LegalEntity.swift",
+      "kind": "StringLiteral",
+      "offset": 229,
+      "length": 9,
+      "value": "\"PRIVATE\""
+    },
+    {
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/LegalEntity.swift",
+      "kind": "StringLiteral",
+      "offset": 259,
+      "length": 10,
+      "value": "\"BUSINESS\""
+    },
+    {
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AccessToken.swift",
       "kind": "StringLiteral",
       "offset": 339,
       "length": 14,
       "value": "\"access_token\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AccessToken.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AccessToken.swift",
       "kind": "StringLiteral",
       "offset": 379,
       "length": 12,
       "value": "\"token_type\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
       "kind": "Array",
       "offset": 2553,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
       "kind": "Dictionary",
       "offset": 2608,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
       "kind": "Dictionary",
       "offset": 2658,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
       "kind": "Dictionary",
       "offset": 2715,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
       "kind": "StringLiteral",
       "offset": 3406,
       "length": 8,
       "value": "\"states\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/State.swift",
       "kind": "StringLiteral",
       "offset": 3430,
       "length": 5,
       "value": "\"csv\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
       "kind": "BooleanLiteral",
       "offset": 447,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
       "kind": "BooleanLiteral",
       "offset": 483,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
       "kind": "BooleanLiteral",
       "offset": 524,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
       "kind": "IntegerLiteral",
       "offset": 669,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
       "kind": "BooleanLiteral",
       "offset": 703,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/InfoTextView.swift",
       "kind": "Array",
       "offset": 745,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/SecureString.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/SecureString.swift",
       "kind": "IntegerLiteral",
       "offset": 575,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SkeletonShimmerView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/SkeletonShimmerView.swift",
       "kind": "BooleanLiteral",
       "offset": 364,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Country.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Country.swift",
       "kind": "Array",
       "offset": 1594,
       "length": 4062,
       "value": "[(\"AF\", \"93\"), (\"AX\", \"358\"), (\"AL\", \"355\"), (\"DZ\", \"213\"), (\"AS\", \"1684\"), (\"AD\", \"376\"), (\"AO\", \"244\"), (\"AI\", \"1264\"), (\"AQ\", \"672\"), (\"AG\", \"1268\"), (\"AR\", \"54\"), (\"AM\", \"374\"), (\"AW\", \"297\"), (\"AC\", \"247\"), (\"AU\", \"61\"), (\"AT\", \"43\"), (\"AZ\", \"994\"), (\"BS\", \"1242\"), (\"BH\", \"973\"), (\"BD\", \"880\"), (\"BB\", \"1246\"), (\"BY\", \"375\"), (\"BE\", \"32\"), (\"BZ\", \"501\"), (\"BJ\", \"229\"), (\"BM\", \"1441\"), (\"BT\", \"975\"), (\"BO\", \"591\"), (\"BA\", \"387\"), (\"BW\", \"267\"), (\"BR\", \"55\"), (\"IO\", \"246\"), (\"BN\", \"673\"), (\"BG\", \"359\"), (\"BF\", \"226\"), (\"BI\", \"257\"), (\"KH\", \"855\"), (\"CM\", \"237\"), (\"CA\", \"1\"), (\"CV\", \"238\"), (\"KY\", \"1345\"), (\"CF\", \"236\"), (\"TD\", \"235\"), (\"CL\", \"56\"), (\"CN\", \"86\"), (\"CX\", \"61\"), (\"CC\", \"61\"), (\"CO\", \"57\"), (\"KM\", \"269\"), (\"CG\", \"242\"), (\"CK\", \"682\"), (\"CR\", \"506\"), (\"HR\", \"385\"), (\"CU\", \"53\"), (\"CY\", \"357\"), (\"CZ\", \"420\"), (\"CD\", \"243\"), (\"DK\", \"45\"), (\"DJ\", \"253\"), (\"DM\", \"1767\"), (\"DO\", \"1849\"), (\"EC\", \"593\"), (\"EG\", \"20\"), (\"SV\", \"503\"), (\"GQ\", \"240\"), (\"ER\", \"291\"), (\"EE\", \"372\"), (\"SZ\", \"268\"), (\"ET\", \"251\"), (\"FK\", \"500\"), (\"FO\", \"298\"), (\"FJ\", \"679\"), (\"FI\", \"358\"), (\"FR\", \"33\"), (\"GF\", \"594\"), (\"PF\", \"689\"), (\"GA\", \"241\"), (\"GM\", \"220\"), (\"GE\", \"995\"), (\"DE\", \"49\"), (\"GH\", \"233\"), (\"GI\", \"350\"), (\"GR\", \"30\"), (\"GL\", \"299\"), (\"GD\", \"1473\"), (\"GP\", \"590\"), (\"GU\", \"1671\"), (\"GT\", \"502\"), (\"GG\", \"44\"), (\"GN\", \"224\"), (\"GW\", \"245\"), (\"GY\", \"592\"), (\"HT\", \"509\"), (\"VA\", \"379\"), (\"HN\", \"504\"), (\"HK\", \"852\"), (\"HU\", \"36\"), (\"IS\", \"354\"), (\"IN\", \"91\"), (\"ID\", \"62\"), (\"IR\", \"98\"), (\"IQ\", \"964\"), (\"IE\", \"353\"), (\"IM\", \"44\"), (\"IL\", \"972\"), (\"IT\", \"39\"), (\"CI\", \"225\"), (\"JM\", \"1876\"), (\"JP\", \"81\"), (\"JE\", \"44\"), (\"JO\", \"962\"), (\"KZ\", \"77\"), (\"KE\", \"254\"), (\"KI\", \"686\"), (\"KP\", \"850\"), (\"KR\", \"82\"), (\"XK\", \"383\"), (\"KW\", \"965\"), (\"KG\", \"996\"), (\"LA\", \"856\"), (\"LV\", \"371\"), (\"LB\", \"961\"), (\"LS\", \"266\"), (\"LR\", \"231\"), (\"LY\", \"218\"), (\"LI\", \"423\"), (\"LT\", \"370\"), (\"LU\", \"352\"), (\"MO\", \"853\"), (\"MG\", \"261\"), (\"MW\", \"265\"), (\"MY\", \"60\"), (\"MV\", \"960\"), (\"ML\", \"223\"), (\"MT\", \"356\"), (\"MH\", \"692\"), (\"MQ\", \"596\"), (\"MR\", \"222\"), (\"MU\", \"230\"), (\"YT\", \"262\"), (\"MX\", \"52\"), (\"FM\", \"691\"), (\"MD\", \"373\"), (\"MC\", \"377\"), (\"MN\", \"976\"), (\"ME\", \"382\"), (\"MS\", \"1664\"), (\"MA\", \"212\"), (\"MZ\", \"258\"), (\"MM\", \"95\"), (\"NA\", \"264\"), (\"NR\", \"674\"), (\"NP\", \"977\"), (\"NL\", \"31\"), (\"AN\", \"599\"), (\"NC\", \"687\"), (\"NZ\", \"64\"), (\"NI\", \"505\"), (\"NE\", \"227\"), (\"NG\", \"234\"), (\"NU\", \"683\"), (\"NF\", \"672\"), (\"MK\", \"389\"), (\"MP\", \"1670\"), (\"NO\", \"47\"), (\"OM\", \"968\"), (\"PK\", \"92\"), (\"PW\", \"680\"), (\"PS\", \"970\"), (\"PA\", \"507\"), (\"PG\", \"675\"), (\"PY\", \"595\"), (\"PE\", \"51\"), (\"PH\", \"63\"), (\"PN\", \"872\"), (\"PL\", \"48\"), (\"PT\", \"351\"), (\"PR\", \"1939\"), (\"QA\", \"974\"), (\"RE\", \"262\"), (\"RO\", \"40\"), (\"RU\", \"7\"), (\"RW\", \"250\"), (\"BL\", \"590\"), (\"SH\", \"290\"), (\"KN\", \"1869\"), (\"LC\", \"1758\"), (\"MF\", \"590\"), (\"PM\", \"508\"), (\"VC\", \"1784\"), (\"WS\", \"685\"), (\"SM\", \"378\"), (\"ST\", \"239\"), (\"SA\", \"966\"), (\"SN\", \"221\"), (\"RS\", \"381\"), (\"SC\", \"248\"), (\"SL\", \"232\"), (\"SG\", \"65\"), (\"SX\", \"1721\"), (\"SK\", \"421\"), (\"SI\", \"386\"), (\"SB\", \"677\"), (\"SO\", \"252\"), (\"ZA\", \"27\"), (\"GS\", \"500\"), (\"SS\", \"211\"), (\"ES\", \"34\"), (\"LK\", \"94\"), (\"SD\", \"249\"), (\"SR\", \"597\"), (\"SJ\", \"47\"), (\"SE\", \"46\"), (\"CH\", \"41\"), (\"SY\", \"963\"), (\"TW\", \"886\"), (\"TJ\", \"992\"), (\"TZ\", \"255\"), (\"TH\", \"66\"), (\"TL\", \"670\"), (\"TG\", \"228\"), (\"TK\", \"690\"), (\"TO\", \"676\"), (\"TT\", \"1868\"), (\"TN\", \"216\"), (\"TR\", \"90\"), (\"TM\", \"993\"), (\"TC\", \"1649\"), (\"TV\", \"688\"), (\"UG\", \"256\"), (\"UA\", \"380\"), (\"AE\", \"971\"), (\"GB\", \"44\"), (\"US\", \"1\"), (\"UY\", \"598\"), (\"UZ\", \"998\"), (\"VU\", \"678\"), (\"VE\", \"58\"), (\"VN\", \"84\"), (\"VG\", \"1284\"), (\"VI\", \"1340\"), (\"WF\", \"681\"), (\"EH\", \"212\"), (\"YE\", \"967\"), (\"ZM\", \"260\"), (\"ZW\", \"263\")]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Country.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Country.swift",
       "kind": "Dictionary",
       "offset": 6242,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Country.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Country.swift",
       "kind": "Array",
       "offset": 6331,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 638,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 964,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 1000,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 1231,
       "length": 2,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "StringLiteral",
       "offset": 1297,
       "length": 7,
       "value": "\"xmark\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 1526,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "StringLiteral",
       "offset": 1698,
       "length": 28,
       "value": "\"general.search.placeholder\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 1859,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2073,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerViewController.swift",
       "kind": "StringLiteral",
       "offset": 2462,
       "length": 12,
       "value": "\"PickerCell\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
       "kind": "StringLiteral",
       "offset": 271,
       "length": 20,
       "value": "\"client_credentials\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
       "kind": "StringLiteral",
       "offset": 584,
       "length": 11,
       "value": "\"client_id\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
       "kind": "StringLiteral",
       "offset": 624,
       "length": 15,
       "value": "\"client_secret\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/AuthRequest.swift",
       "kind": "StringLiteral",
       "offset": 665,
       "length": 12,
       "value": "\"grant_type\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 271,
       "length": 3,
       "value": "\" \""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 297,
       "length": 4,
       "value": "\"\n\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 416,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 447,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 470,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 523,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 533,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 654,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 685,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 708,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 767,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 777,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 860,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 891,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 914,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 964,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 974,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 1060,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 1091,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 1114,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 1183,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 1193,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 1270,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 1301,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 1324,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "StringLiteral",
       "offset": 1384,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Security\/Debug.swift",
       "kind": "IntegerLiteral",
       "offset": 1394,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Money.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Money.swift",
       "kind": "IntegerLiteral",
       "offset": 1135,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Money.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Money.swift",
       "kind": "StringLiteral",
       "offset": 1148,
       "length": 5,
       "value": "\"USD\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 576,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 636,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "IntegerLiteral",
       "offset": 933,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 993,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1024,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1352,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1450,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1650,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1923,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 1961,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "StringLiteral",
       "offset": 2141,
       "length": 14,
       "value": "\"chevron.down\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "FloatLiteral",
       "offset": 2309,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "BooleanLiteral",
       "offset": 2376,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Views\/PickerFieldView.swift",
       "kind": "Array",
       "offset": 2570,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
       "kind": "StringLiteral",
       "offset": 533,
       "length": 21,
       "value": "\"purchase_request_id\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
       "kind": "StringLiteral",
       "offset": 656,
       "length": 17,
       "value": "\"timezone_offset\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
       "kind": "StringLiteral",
       "offset": 702,
       "length": 15,
       "value": "\"screen_height\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
       "kind": "StringLiteral",
       "offset": 745,
       "length": 14,
       "value": "\"screen_width\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Entities\/CardProcessRequest.swift",
       "kind": "StringLiteral",
       "offset": 792,
       "length": 20,
       "value": "\"screen_color_depth\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/ThemeManager.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Theme\/ThemeManager.swift",
       "kind": "StringLiteral",
       "offset": 611,
       "length": 20,
       "value": "\"com.paypipes.theme\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Configuration.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Configuration.swift",
       "kind": "BooleanLiteral",
       "offset": 1475,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Configuration.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Configuration.swift",
       "kind": "BooleanLiteral",
       "offset": 1521,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
       "kind": "Array",
       "offset": 1620,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
       "kind": "BooleanLiteral",
       "offset": 1645,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
       "kind": "StringLiteral",
       "offset": 1695,
       "length": 24,
       "value": "\"general.required.title\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
       "kind": "BooleanLiteral",
       "offset": 1872,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
       "kind": "BooleanLiteral",
       "offset": 2007,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
       "kind": "BooleanLiteral",
       "offset": 2032,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Projects\/PuNext\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
+      "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/Form\/Models\/FormField.swift",
       "kind": "Array",
       "offset": 2227,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 735,
       "length": 14,
       "value": "\"pp_card_amex\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 904,
       "length": 26,
       "value": "\"pp_card_cartes_bancaires\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1060,
       "length": 13,
       "value": "\"pp_card_cbc\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1203,
       "length": 13,
       "value": "\"pp_card_cvc\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1355,
       "length": 18,
       "value": "\"pp_card_cvc_amex\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1509,
       "length": 16,
       "value": "\"pp_card_diners\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1665,
       "length": 18,
       "value": "\"pp_card_discover\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1817,
       "length": 15,
       "value": "\"pp_card_error\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1962,
       "length": 13,
       "value": "\"pp_card_jcb\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2113,
       "length": 17,
       "value": "\"pp_card_maestro\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2274,
       "length": 20,
       "value": "\"pp_card_mastercard\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2434,
       "length": 18,
       "value": "\"pp_card_unionpay\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2590,
       "length": 17,
       "value": "\"pp_card_unknown\""
     },
     {
-      "filePath": "\/Users\/pnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bgubdqoodldzxuahbeebbhlgdcia\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/pavelnemecek\/Library\/Developer\/Xcode\/DerivedData\/PayPipes-bzlrwbwfumppsubnaeokgaazlypi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/PayPipes\/IntermediateBuildFilesPath\/PayPipes.build\/Release-iphoneos\/PayPipes.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2739,
       "length": 14,
