@@ -1,7 +1,7 @@
 # PayPipes iOS SDK
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/paypipespublic/punext-pms-sdk-ios)
-[![Platform](https://img.shields.io/badge/platform-iOS%2016.6%2B-lightgrey.svg)](https://developer.apple.com/ios/)
+[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://github.com/paypipespublic/punext-pms-sdk-ios)
+[![Platform](https://img.shields.io/badge/platform-iOS%2015.0%2B-lightgrey.svg)](https://developer.apple.com/ios/)
 [![Swift](https://img.shields.io/badge/swift-5.9-orange.svg)](https://swift.org)
 ![License](https://img.shields.io/badge/license-Proprietary-red.svg)
 
@@ -17,7 +17,7 @@ PayPipes SDK provides a seamless and secure payment processing solution for iOS 
 
 ## Requirements
 
-- iOS 16.6+
+- iOS 15.0+
 - Xcode 15.0+
 - Swift 5.9+
 
@@ -39,7 +39,7 @@ Alternatively, add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/paypipespublic/punext-pms-sdk-ios.git", from: "1.0.0")
+    .package(url: "https://github.com/paypipespublic/punext-pms-sdk-ios.git", from: "1.0.3")
 ]
 ```
 
@@ -64,30 +64,37 @@ import PayPipes
 let configuration = Configuration(
     clientId: "your-client-id",
     clientSecret: "your-client-secret",
+    companyName: "Your Company",
+    termsUrl: URL(string: "https://yourcompany.com/terms")!,
     environment: .production, // or .sandbox
-    theme: nil // Use default theme, or provide custom theme
+    theme: .default,
+    isLoggingEnabled: false,
+    language: nil // Use system language, or .english, .czech
 )
 ```
 
 ### 3. Create a Transaction
 
 ```swift
-// BillingInfo is required - create it with mandatory fields
-let billingInfo = BillingInfo(
+// CustomerDetails is required
+let customerDetails = CustomerDetails(
     firstName: "John",
     lastName: "Smith",
     email: "john.smith@example.com",
     address: nil, // Optional
-    phone: nil // Optional
+    phone: nil, // Optional
+    legalEntity: .private, // or .business
+    referenceId: nil // Optional: your unique customer identifier
 )
 
 let amount = Money(amount: 10.00, currency: "USD")
 let transaction = CardTransaction(
     amount: amount,
     orderId: UUID().uuidString,
-    billingInfo: billingInfo,
+    customerDetails: customerDetails,
     flowType: .cardPayment,
-    billingAddressRequired: false
+    billingAddressRequired: false,
+    callbackUrl: nil // Optional: URL for server callbacks
 )
 ```
 
@@ -103,9 +110,17 @@ do {
         completion: { result in
             switch result {
             case .success(let details):
-                print("Payment successful: \(details.transactionId)")
-            case .failure(let error):
-                print("Payment failed: \(error)")
+                print("Transaction ID: \(details.transactionId)")
+                print("Customer Token: \(details.customerToken)")
+            case .failure(let failure):
+                print("Error: \(failure.error)")
+                // Partial data may be available
+                if let txnId = failure.transactionId {
+                    print("Transaction ID: \(txnId)")
+                }
+                if let token = failure.customerToken {
+                    print("Customer Token: \(token)")
+                }
             }
         }
     )
@@ -136,9 +151,10 @@ struct PaymentView: View {
         ) { result in
             switch result {
             case .success(let details):
-                print("Payment successful: \(details.transactionId)")
-            case .failure(let error):
-                print("Payment failed: \(error)")
+                print("Transaction ID: \(details.transactionId)")
+                print("Customer Token: \(details.customerToken)")
+            case .failure(let failure):
+                print("Error: \(failure.error)")
             }
         }
     }
@@ -152,12 +168,13 @@ struct PaymentView: View {
 ```swift
 let customTheme = Theme(
     colors: Theme.Colors(
-        primary: .systemBlue,
-        background: .systemBackground,
+        screenBackgroundColor: UIColor.systemBackground,
+        buttonBackgroundColor: UIColor.systemBlue,
+        buttonTitleColor: .white
         // ... customize other colors
     ),
     fonts: Theme.Fonts(
-        title: .systemFont(ofSize: 24, weight: .bold),
+        buttonTitleFont: .boldSystemFont(ofSize: 16)
         // ... customize other fonts
     )
 )
@@ -165,34 +182,36 @@ let customTheme = Theme(
 let configuration = Configuration(
     clientId: "your-client-id",
     clientSecret: "your-client-secret",
+    companyName: "Your Company",
+    termsUrl: URL(string: "https://yourcompany.com/terms")!,
     environment: .production,
     theme: customTheme
 )
 ```
 
-### Billing Address
+### Customer Details
 
-**BillingInfo is mandatory** for all transactions. The following fields are required:
+**CustomerDetails is mandatory** for all transactions. The following fields are required:
 - `firstName: String` - Customer's first name
 - `lastName: String` - Customer's last name  
 - `email: String` - Customer's email address
 
 The following fields are optional:
-- `address: Address?` - Optional billing address
-- `phone: Phone?` - Optional phone number
+- `address: Address?` - Customer's billing address
+- `phone: Phone?` - Customer's phone number
+- `legalEntity: LegalEntity` - `.private` (default) or `.business`
+- `referenceId: String?` - Your unique customer identifier (max 255 chars)
 
 ```swift
-// Minimal required BillingInfo
-let minimalBillingInfo = BillingInfo(
+// Minimal required CustomerDetails
+let minimalCustomerDetails = CustomerDetails(
     firstName: "John",
     lastName: "Smith",
-    email: "john.smith@example.com",
-    address: nil,
-    phone: nil
+    email: "john.smith@example.com"
 )
 
-// Complete BillingInfo with address and phone
-let completeBillingInfo = BillingInfo(
+// Complete CustomerDetails with all fields
+let completeCustomerDetails = CustomerDetails(
     firstName: "John",
     lastName: "Smith",
     email: "john.smith@example.com",
@@ -203,15 +222,18 @@ let completeBillingInfo = BillingInfo(
         postCode: "10001",
         country: "US"
     ),
-    phone: Phone(number: "1234567890", countryCode: "+1")
+    phone: Phone(number: "1234567890", countryCode: "+1"),
+    legalEntity: .private,
+    referenceId: "customer-123"
 )
 
 let transaction = CardTransaction(
     amount: amount,
     orderId: UUID().uuidString,
-    billingInfo: completeBillingInfo, // Required - cannot be nil
+    customerDetails: completeCustomerDetails,
     flowType: .cardPayment,
-    billingAddressRequired: true
+    billingAddressRequired: true,
+    callbackUrl: URL(string: "https://yourserver.com/callback")
 )
 ```
 
@@ -243,24 +265,27 @@ Represents a payment transaction.
 
 - `amount: Money` - The transaction amount
 - `orderId: String` - Unique order identifier
-- `billingInfo: BillingInfo` - **Required** billing information (cannot be nil)
+- `customerDetails: CustomerDetails` - **Required** customer information
 - `flowType: FlowType` - Transaction type (`.cardPayment` or `.cardStorage`)
 - `billingAddressRequired: Bool` - Whether billing address is required
+- `callbackUrl: URL?` - Optional URL for server callbacks
 
-### BillingInfo
+### CustomerDetails
 
-Represents billing information for a customer.
+Represents customer information for a transaction.
 
 #### Required Properties
 
-- `firstName: String` - Customer's first name (required)
-- `lastName: String` - Customer's last name (required)
-- `email: String` - Customer's email address (required)
+- `firstName: String` - Customer's first name
+- `lastName: String` - Customer's last name
+- `email: String` - Customer's email address
 
 #### Optional Properties
 
-- `address: Address?` - Customer's billing address (optional)
-- `phone: Phone?` - Customer's phone number (optional)
+- `address: Address?` - Customer's billing address
+- `phone: Phone?` - Customer's phone number
+- `legalEntity: LegalEntity` - `.private` (default) or `.business`
+- `referenceId: String?` - Your unique customer identifier (max 255 chars)
 
 ### Configuration
 
@@ -270,8 +295,13 @@ SDK configuration settings.
 
 - `clientId: String` - Your client ID
 - `clientSecret: String` - Your client secret
+- `companyName: String` - Displayed in payment form
+- `termsUrl: URL` - URL to your terms and conditions
 - `environment: Environment` - `.production` or `.sandbox`
-- `theme: Theme?` - Optional custom theme
+- `theme: Theme` - UI theme (default: `.default`)
+- `isLoggingEnabled: Bool` - Enable SDK logging (default: `false`)
+- `isScreenCaptureEnabled: Bool` - Allow screenshots (default: `false`)
+- `language: SDKLanguage?` - Override display language (`.english`, `.czech`)
 
 ## Error Handling
 
@@ -280,20 +310,33 @@ The SDK provides detailed error information:
 ```swift
 switch result {
 case .success(let details):
-    // Transaction successful
     let transactionId = details.transactionId
-case .failure(let error):
-    switch error {
-    case .cancelled:
+    let customerToken = details.customerToken
+    
+case .failure(let failure):
+    switch failure.error {
+    case .compromisedDevice:
+        // Device is jailbroken
+    case .canceled:
         // User cancelled the transaction
-    case .networkError(let message):
-        // Network error occurred
-    case .validationError(let message):
-        // Validation failed
-    case .securityError(let message):
-        // Security check failed (e.g., jailbroken device)
-    default:
-        // Other errors
+    case .declined(let code):
+        // Transaction was declined: code.rawValue
+    case .noSchemeForCurrency:
+        // No payment scheme available for currency
+    case .unknownTransactionState:
+        // Transaction state could not be determined
+    case .serverError(let error):
+        // Server-side error: error.message
+    case .invalidInput:
+        // Input validation failed
+    }
+    
+    // Partial data may be available even on failure
+    if let txnId = failure.transactionId {
+        print("Transaction was created: \(txnId)")
+    }
+    if let token = failure.customerToken {
+        print("Customer was created: \(token)")
     }
 }
 ```
