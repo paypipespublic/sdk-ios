@@ -1,236 +1,320 @@
-# iOS SDK - Internal Developer Guide
+# PayPipes iOS SDK
 
-This document provides an internal overview of the iOS SDK, covering its architecture, key components, development practices, and project structure. It is intended for developers working on the SDK itself.
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/paypipespublic/punext-pms-sdk-ios)
+[![Platform](https://img.shields.io/badge/platform-iOS%2016.6%2B-lightgrey.svg)](https://developer.apple.com/ios/)
+[![Swift](https://img.shields.io/badge/swift-5.9-orange.svg)](https://swift.org)
+![License](https://img.shields.io/badge/license-Proprietary-red.svg)
 
-## Core Objectives & Design Philosophy
+PayPipes SDK provides a seamless and secure payment processing solution for iOS applications. This SDK handles card payment transactions, card storage, and 3D Secure authentication flows.
 
-*   **Provide a seamless and secure payment experience:** The primary goal is to offer a robust, easy-to-integrate, and secure solution for card payment processing within iOS applications.
-*   **Modularity and Reusability:** Components are designed to be as self-contained as possible (e.g., Form System, Card Scanner) to promote reusability and maintainability.
-*   **Native Look and Feel with Theming:** While offering a default UI, the SDK is themable to allow integrators to match their app's branding.
-*   **Clear Error Handling:** Provide distinct and actionable error information.
-*   **Security First:** Implement security best practices, including SSL pinning and careful data handling.
+## Features
 
-## Architecture Overview
+- 💳 **Card Payment Processing**: Complete payment flow with card validation
+- 🔒 **Security First**: SSL pinning, device integrity checks, secure data handling
+- 🎨 **Customizable Theming**: Match your app's design system
+- 🌍 **Localization**: Multi-language support
+- ✅ **3D Secure**: Full support for 3DS authentication flows
 
-The iOS SDK primarily follows an MVC (Model-View-Controller) pattern for its UI components, with distinct services for API communication and other functionalities.
+## Requirements
 
-*   **Models (`Source/Model/`)**:
-    *   **Core (`Source/Model/Core/`)**: Core domain models and configuration (`CardTransaction`, `Configuration`, `Money`, `BillingInfo`, `CardScheme`, `Country`).
-    *   **Entities (`Source/Model/Entities/`)**: Network DTOs (`CreateCustomerRequest`, `PurchaseResponse`, etc.).
-    *   **Managers (`Source/Model/Manager/`)**: High-level business logic managers, specifically `ApiManager`.
-    *   **Network (`Source/Model/Network/`)**: Low-level networking layer (`Service`, `Request`, `ServiceError`).
-    *   **Errors**: `SDKError.swift` (high-level SDK errors) and `ServiceError` (network/API specific errors).
+- iOS 16.6+
+- Xcode 15.0+
+- Swift 5.9+
 
-*   **Views (`Source/UI/`)**:
-    *   **Form System (`Source/UI/Form/Views/`)**: `FormStackView` (main container), various field views (`InputFieldView`, `CardNumberFieldView`, `CheckboxFieldView`, `SubmitButtonView`, `CardSchemesHeaderView`), `InputContainerView` (handles field borders/styles).
-    *   **Theming (`Source/Theme/`)**: `Theme` struct and its default implementation, `Theme.Colors`, `Theme.Fonts`, `Theme.Sizes`. `ThemeManager` provides thread-safe access to the active theme.
+## Installation
 
-*   **Controllers (`Source/UI/`)**:
-    *   `CardTransactionFormController`: The primary controller orchestrating the card payment flow. It manages the `FormStackView`, handles user input, performs validation, interacts with `ApiManager` for backend operations, and manages the card scanning process.
-    *   `CardScannerViewController`: Manages the camera input and card scanning UI, delegating the actual scanning to the `CardScanner` utility.
-    *   `ThreeDSWebViewController`: Manages the 3D Secure WebView interactions.
+### Swift Package Manager
 
-*   **Services & Managers**:
-    *   `ApiManager`: High-level abstraction for interacting with the backend API. It uses the `Service` for actual HTTP requests and handles authentication and business logic.
-    *   `Service`: Low-level networking client responsible for:
-        *   Constructing and sending `URLRequest`s.
-        *   SSL Pinning (using SPKI hashes from `Configuration` or defaults).
-        *   Parsing responses and decoding JSON.
+Add the PayPipes SDK to your project using Swift Package Manager:
 
-*   **Utilities & Helpers (`Source/Extensions/`, `Source/UI/Form/Validation/`)**:
-    *   **Validation (`Source/UI/Form/Validation/`)**: `Validator` protocol and concrete implementations (`CardNumberValidator`, `CardExpiryValidator`, `CVVValidator`, `InputSanitizer`, etc.).
-    *   **Extensions**: Useful extensions on `String` (Luhn check, card brand detection), `UIColor`, `Bundle`, etc.
-    *   **Logging (`Source/Logging/`)**: `Logger` class for conditional logging.
-    *   **Card Scanner (`Source/UI/CardScanner/`)**: Uses `AVFoundation` and `Vision` for detecting card rectangles and recognizing text.
+1. In Xcode, go to **File → Add Package Dependencies**
+2. Enter the repository URL:
+   ```
+   https://github.com/paypipespublic/punext-pms-sdk-ios.git
+   ```
+3. Select the version you want to use (or use the latest)
+4. Add the `PayPipes` package to your target
 
-## Key Systems Deep Dive
+Alternatively, add it to your `Package.swift`:
 
-### Form System
+```swift
+dependencies: [
+    .package(url: "https://github.com/paypipespublic/punext-pms-sdk-ios.git", from: "1.0.0")
+]
+```
 
-*   **Data Flow**: `CardTransactionFormController` defines `FormSection`s containing `FormItem`s. These are passed to `FormStackView`.
-*   **View Rendering**: `FormStackView` renders these items into a vertical stack.
-*   **User Input & State**: Views directly update the `value` property of their bound `FormField` instance. `onChange` callbacks on `FormField` trigger actions in the controller.
-*   **Validation**: `FormField` has a `validators: [Validator]` array and a `validate()` method. `CardTransactionFormController` orchestrates overall form validation before submission.
+### Manual Integration
 
-### Card Scanning
+1. Download the `PayPipes.xcframework` from the [Releases](https://github.com/paypipespublic/punext-pms-sdk-ios/releases) page
+2. Drag `PayPipes.xcframework` into your Xcode project
+3. In your target's **General** settings, add `PayPipes.xcframework` to **Frameworks, Libraries, and Embedded Content**
+4. Ensure **Embed & Sign** is selected
 
-*   `UIImagePickerController.isScanningAvailable` checks for camera permission.
-*   `CardScannerViewController` presents the camera feed.
-*   `CardScanner` uses `AVCaptureSession` for input and `VNRecognizeTextRequest` for text recognition.
-*   Results are passed back via closure to `CardTransactionFormController`.
+## Quick Start
 
-### Theming
+### 1. Import the SDK
 
-*   `Theme` struct defines customizable properties (colors, fonts, sizes).
-*   `ThemeManager.shared.currentTheme` provides access to the active theme.
-*   `Configuration` carries a theme which is applied via `ThemeManager` upon SDK initialization.
+```swift
+import PayPipes
+```
 
-### Localization
-
-The SDK supports multiple languages with an optional explicit language override:
+### 2. Configure the SDK
 
 ```swift
 let configuration = Configuration(
-    // ... other params ...
-    language: .czech  // Force Czech language
+    clientId: "your-client-id",
+    clientSecret: "your-client-secret",
+    environment: .production, // or .sandbox
+    theme: nil // Use default theme, or provide custom theme
 )
 ```
 
-#### Supported Languages
-
-| Language | Enum Value | ISO 639-1 |
-|----------|------------|-----------|
-| English | `.english` | `en` |
-| Czech | `.czech` | `cs` |
-
-#### Language Resolution
-
-1. If `language` is explicitly set in `Configuration`, use that language
-2. Otherwise, check if the system language is supported
-3. Fall back to English if system language is not supported
-
-The resolved language is:
-*   Used for all SDK UI strings via `LanguageManager`
-*   Sent to the backend via the `language` parameter in API requests
-
-### Transaction Configuration
-
-The `CardTransaction` struct defines the transaction details:
+### 3. Create a Transaction
 
 ```swift
+// BillingInfo is required - create it with mandatory fields
+let billingInfo = BillingInfo(
+    firstName: "John",
+    lastName: "Smith",
+    email: "john.smith@example.com",
+    address: nil, // Optional
+    phone: nil // Optional
+)
+
+let amount = Money(amount: 10.00, currency: "USD")
 let transaction = CardTransaction(
-    amount: Money(amount: 10, currency: "USD"),
+    amount: amount,
     orderId: UUID().uuidString,
-    customerDetails: customerDetails,
+    billingInfo: billingInfo,
     flowType: .cardPayment,
-    billingAddressRequired: false,
-    callbackUrl: URL(string: "https://example.com/callback")  // Optional
+    billingAddressRequired: false
 )
 ```
 
-#### Parameters
+### 4. Present the Payment UI
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `amount` | `Money` | Yes | Transaction amount and currency |
-| `orderId` | `String` | Yes | Unique identifier for the order |
-| `customerDetails` | `CustomerDetails` | Yes | Customer details including billing information |
-| `flowType` | `FlowType` | No | `.cardPayment` (default) or `.cardStorage` |
-| `billingAddressRequired` | `Bool` | No | Whether to collect billing address (default: `false`) |
-| `callbackUrl` | `URL?` | No | URL for receiving transaction status callbacks |
-
-#### Customer Details
-
-`CustomerDetails` contains the customer information for the transaction:
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `firstName` | `String` | Yes | Customer's first name |
-| `lastName` | `String` | Yes | Customer's last name |
-| `email` | `String` | Yes | Customer's email address |
-| `address` | `Address?` | No | Customer's billing address |
-| `phone` | `Phone?` | No | Customer's phone number |
-| `legalEntity` | `LegalEntity` | No | `.private` (default) or `.business` |
-| `referenceId` | `String?` | No | Unique customer identifier (max 255 chars) |
-
-#### Callback URL
-
-The optional `callbackUrl` parameter allows you to receive transaction status updates from the server:
-
-*   Must use HTTP or HTTPS scheme
-*   Maximum length: 2048 characters
-*   Invalid URLs are silently ignored (treated as `nil`)
-
-### Result Handling
-
-The SDK uses Swift's `Result` type for transaction outcomes:
+#### UIKit
 
 ```swift
-public typealias CardTransactionResult = Result<CardTransactionDetails, CardTransactionFailure>
+do {
+    let transactionController = try PayPipesUI.buildCardTransactionController(
+        with: configuration,
+        transaction: transaction,
+        completion: { result in
+            switch result {
+            case .success(let details):
+                print("Payment successful: \(details.transactionId)")
+            case .failure(let error):
+                print("Payment failed: \(error)")
+            }
+        }
+    )
+    transactionController.modalPresentationStyle = .fullScreen
+    present(transactionController, animated: true)
+} catch {
+    print("Failed to initialize SDK: \(error)")
+}
 ```
 
-#### Success Result
-
-`CardTransactionDetails` contains:
-*   `transactionId: String` - The unique transaction identifier
-*   `customerToken: String` - The customer token for future transactions
-
-#### Failure Result
-
-`CardTransactionFailure` wraps the error with optional partial data:
-*   `error: CardTransactionError` - The specific error that occurred
-*   `transactionId: String?` - Transaction ID if one was created before failure
-*   `customerToken: String?` - Customer token if one was created before failure
-
-This design allows integrators to access partial transaction data even when an error occurs (e.g., when a transaction was created but later declined).
-
-#### Usage Example
+#### SwiftUI
 
 ```swift
-PayPipesUI.buildCardTransactionController(
-    with: configuration,
-    transaction: transaction
-) { result in
-    switch result {
-    case .success(let details):
-        print("Transaction ID: \(details.transactionId)")
-        print("Customer Token: \(details.customerToken)")
-        
-    case .failure(let failure):
-        print("Error: \(failure.error)")
-        // Access partial data if available
-        if let txnId = failure.transactionId {
-            print("Partial Transaction ID: \(txnId)")
+import SwiftUI
+import PayPipes
+
+struct PaymentView: View {
+    @State private var showPayment = false
+    
+    var body: some View {
+        Button("Pay") {
+            showPayment = true
         }
-        if let token = failure.customerToken {
-            print("Partial Customer Token: \(token)")
+        .payPipesUI(
+            isPresented: $showPayment,
+            configuration: configuration,
+            transaction: transaction
+        ) { result in
+            switch result {
+            case .success(let details):
+                print("Payment successful: \(details.transactionId)")
+            case .failure(let error):
+                print("Payment failed: \(error)")
+            }
         }
     }
 }
 ```
 
-#### Error Types (`CardTransactionError`)
+## Configuration
 
-| Error | Description |
-|-------|-------------|
-| `.compromisedDevice` | Device is jailbroken/rooted |
-| `.canceled` | User cancelled the transaction |
-| `.declined(CardTransactionDeclineCode)` | Transaction was declined |
-| `.noSchemeForCurrency` | No payment scheme available for currency |
-| `.unknownTransactionState` | Transaction state could not be determined |
-| `.serverError(ServerError)` | Server-side error occurred |
-| `.invalidInput` | Input validation failed |
+### Custom Theme
 
-## Project Structure
+```swift
+let customTheme = Theme(
+    colors: Theme.Colors(
+        primary: .systemBlue,
+        background: .systemBackground,
+        // ... customize other colors
+    ),
+    fonts: Theme.Fonts(
+        title: .systemFont(ofSize: 24, weight: .bold),
+        // ... customize other fonts
+    )
+)
 
-*   **/PayPipes**: The main SDK source code.
-    *   **/Source**: All Swift source files.
-        *   **/UI**: UI components, ViewControllers, and Form system.
-        *   **/Model**: Data models, Networking, and Managers.
-        *   **/Theme**: Theming system.
-        *   **/Security**: Secure data handling (`SecureString`, `JWEEncryption`).
-        *   **/Extensions**: Helper extensions.
-        *   **/Logging**: Logger implementation.
-*   **/ExampleApp**: A simple application demonstrating how to integrate and use the SDK.
-*   **/PayPipesTests**: Unit and integration tests.
+let configuration = Configuration(
+    clientId: "your-client-id",
+    clientSecret: "your-client-secret",
+    environment: .production,
+    theme: customTheme
+)
+```
 
-### ⚠️ Security Warning: Handling Credentials
+### Billing Address
 
-**Do not hardcode your `clientId` and `clientSecret` in your production code.**
+**BillingInfo is mandatory** for all transactions. The following fields are required:
+- `firstName: String` - Customer's first name
+- `lastName: String` - Customer's last name  
+- `email: String` - Customer's email address
 
-The provided `ExampleApp` hardcodes credentials for demonstration purposes only. For a production application, you should store and load these secrets securely.
+The following fields are optional:
+- `address: Address?` - Optional billing address
+- `phone: Phone?` - Optional phone number
 
-## Development Guidelines
+```swift
+// Minimal required BillingInfo
+let minimalBillingInfo = BillingInfo(
+    firstName: "John",
+    lastName: "Smith",
+    email: "john.smith@example.com",
+    address: nil,
+    phone: nil
+)
 
-*   **Code Style**: Adhere to Swift API Design Guidelines.
-*   **Dependency Management**: The SDK avoids external dependencies to minimize conflict for integrators.
-*   **API Design**: Public APIs are carefully considered and documented. `PayPipesUI` is the main entry point.
-*   **Error Handling**: Utilize `CardTransactionFailure` (wraps `CardTransactionError` with partial data) and `SDKError`.
-*   **Localization**: Localization is handled via `String(localized:bundle:)` using keys in `Localizable.xcstrings`.
+// Complete BillingInfo with address and phone
+let completeBillingInfo = BillingInfo(
+    firstName: "John",
+    lastName: "Smith",
+    email: "john.smith@example.com",
+    address: Address(
+        street: "123 Main St",
+        city: "New York",
+        state: "NY",
+        postCode: "10001",
+        country: "US"
+    ),
+    phone: Phone(number: "1234567890", countryCode: "+1")
+)
 
-## Key Contacts & Maintainers
+let transaction = CardTransaction(
+    amount: amount,
+    orderId: UUID().uuidString,
+    billingInfo: completeBillingInfo, // Required - cannot be nil
+    flowType: .cardPayment,
+    billingAddressRequired: true
+)
+```
 
-*   Pavel Nemecek, pnemecek@purple-technology.com
+## Sample App
 
----
-*This document is for internal use. Information may change as the SDK evolves.*
+See the `SampleApp` directory for a complete example application demonstrating:
+- UIKit integration
+- SwiftUI integration
+- Theme customization
+- Billing address handling
+- Error handling
+
+## API Reference
+
+### PayPipesUI
+
+The main entry point for the SDK.
+
+#### Methods
+
+- `buildCardTransactionController(with:transaction:completion:)` - Creates a UIKit view controller for card transactions
+- `updateTheme(_:)` - Updates the SDK theme at runtime
+
+### CardTransaction
+
+Represents a payment transaction.
+
+#### Properties
+
+- `amount: Money` - The transaction amount
+- `orderId: String` - Unique order identifier
+- `billingInfo: BillingInfo` - **Required** billing information (cannot be nil)
+- `flowType: FlowType` - Transaction type (`.cardPayment` or `.cardStorage`)
+- `billingAddressRequired: Bool` - Whether billing address is required
+
+### BillingInfo
+
+Represents billing information for a customer.
+
+#### Required Properties
+
+- `firstName: String` - Customer's first name (required)
+- `lastName: String` - Customer's last name (required)
+- `email: String` - Customer's email address (required)
+
+#### Optional Properties
+
+- `address: Address?` - Customer's billing address (optional)
+- `phone: Phone?` - Customer's phone number (optional)
+
+### Configuration
+
+SDK configuration settings.
+
+#### Properties
+
+- `clientId: String` - Your client ID
+- `clientSecret: String` - Your client secret
+- `environment: Environment` - `.production` or `.sandbox`
+- `theme: Theme?` - Optional custom theme
+
+## Error Handling
+
+The SDK provides detailed error information:
+
+```swift
+switch result {
+case .success(let details):
+    // Transaction successful
+    let transactionId = details.transactionId
+case .failure(let error):
+    switch error {
+    case .cancelled:
+        // User cancelled the transaction
+    case .networkError(let message):
+        // Network error occurred
+    case .validationError(let message):
+        // Validation failed
+    case .securityError(let message):
+        // Security check failed (e.g., jailbroken device)
+    default:
+        // Other errors
+    }
+}
+```
+
+## Security
+
+- **SSL Pinning**: All network requests use SSL pinning for enhanced security
+- **Device Integrity**: The SDK checks for compromised devices (jailbreak/root)
+- **Secure Storage**: Sensitive data is handled securely
+- **Screen Protection**: Screenshots are prevented during payment flows
+
+## Support
+
+For issues, questions, or feature requests, please contact:
+- Email: pnemecek@purple-technology.com
+
+## License
+
+Proprietary - All rights reserved.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history and changes.
+
