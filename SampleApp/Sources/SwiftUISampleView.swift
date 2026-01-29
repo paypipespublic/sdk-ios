@@ -53,6 +53,7 @@ struct SwiftUISampleView: View {
                     TextField("First Name", text: $firstName).textFieldStyle(.roundedBorder)
                     TextField("Last Name", text: $lastName).textFieldStyle(.roundedBorder)
                     TextField("Email", text: $email).textFieldStyle(.roundedBorder)
+                    TextField("Reference ID (optional)", text: $referenceId).textFieldStyle(.roundedBorder)
 
                     Divider()
 
@@ -104,6 +105,32 @@ struct SwiftUISampleView: View {
                             Text("Apply a blue custom theme to the SDK UI")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                .padding()
+                .background(Color(UIColor.secondarySystemBackground))
+                .cornerRadius(12)
+
+                Text("SDK Language").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
+                
+                VStack(spacing: 8) {
+                    Text("Override SDK display language")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    Picker("Language", selection: $languageSelection) {
+                        Text("System").tag(0)
+                        Text("English").tag(1)
+                        Text("Czech").tag(2)
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: languageSelection) { newValue in
+                        switch newValue {
+                        case 0: selectedLanguage = nil
+                        case 1: selectedLanguage = .english
+                        case 2: selectedLanguage = .czech
+                        default: selectedLanguage = nil
                         }
                     }
                 }
@@ -163,7 +190,7 @@ struct SwiftUISampleView: View {
             currency: selectedCurrency,
             amount: amount,
             billingAddressRequired: billingAddressRequired,
-            buildBillingInfo: buildBillingInfo,
+            buildCustomerDetails: buildCustomerDetails,
             showAlert: $showAlert,
             alertTitle: $alertTitle,
             alertMessage: $alertMessage
@@ -186,12 +213,17 @@ struct SwiftUISampleView: View {
     @State private var firstName: String = Constants.defaultFirstName
     @State private var lastName: String = Constants.defaultLastName
     @State private var email: String = Constants.defaultEmail
+    @State private var referenceId: String = ""
     @State private var isCustomThemeEnabled: Bool = false
     
     // Alert state
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
     @State private var showAlert: Bool = false
+    
+    // Language state
+    @State private var selectedLanguage: SDKLanguage? = nil // nil = use system language
+    @State private var languageSelection: Int = 0 // 0 = System, 1 = English, 2 = Czech
 
     private var configuration: Configuration {
         guard let termsUrl = URL(string: Constants.termsUrlString) else {
@@ -205,7 +237,8 @@ struct SwiftUISampleView: View {
             termsUrl: termsUrl,
             environment: .sandbox,
             theme: isCustomThemeEnabled ? customTheme : .default,
-            isLoggingEnabled: true
+            isLoggingEnabled: true,
+            language: selectedLanguage
         )
     }
 
@@ -264,14 +297,15 @@ struct SwiftUISampleView: View {
         return Theme(colors: colors, fonts: fonts)
     }
 
-    private func buildBillingInfo() -> BillingInfo {
-        BillingInfo(
+    private func buildCustomerDetails() -> CustomerDetails {
+        CustomerDetails(
             firstName: firstName,
             lastName: lastName,
             email: email,
             address: billingAddressProvided ? Constants.sampleAddress : nil,
             phone: Constants.samplePhone,
-            legalEntity: isBusinessCustomer ? .business : .private
+            legalEntity: isBusinessCustomer ? .business : .private,
+            referenceId: referenceId.isEmpty ? nil : referenceId
         )
     }
 
@@ -279,9 +313,10 @@ struct SwiftUISampleView: View {
         CardTransaction(
             amount: amount,
             orderId: UUID().uuidString,
-            billingInfo: buildBillingInfo(),
+            customerDetails: buildCustomerDetails(),
             flowType: flowType,
-            billingAddressRequired: billingAddressRequired
+            billingAddressRequired: billingAddressRequired,
+            callbackUrl: Constants.sampleCallbackUrl
         )
     }
 }
@@ -297,7 +332,7 @@ private struct PayPipesEntryModifier: ViewModifier {
     let currency: String
     let amount: String
     let billingAddressRequired: Bool
-    let buildBillingInfo: () -> BillingInfo
+    let buildCustomerDetails: () -> CustomerDetails
     @Binding var showAlert: Bool
     @Binding var alertTitle: String
     @Binding var alertMessage: String
@@ -308,9 +343,10 @@ private struct PayPipesEntryModifier: ViewModifier {
         let transaction = CardTransaction(
             amount: Money(amount: amountValue, currency: currency),
             orderId: orderSeed.uuidString,
-            billingInfo: buildBillingInfo(),
+            customerDetails: buildCustomerDetails(),
             flowType: .cardPayment,
-            billingAddressRequired: billingAddressRequired
+            billingAddressRequired: billingAddressRequired,
+            callbackUrl: Constants.sampleCallbackUrl
         )
 
         return content
@@ -336,15 +372,19 @@ private struct PayPipesEntryModifier: ViewModifier {
     private func handleTransactionResult(_ result: CardTransactionResult) {
         switch result {
         case let .success(details):
-            let successMessage = "Payment successful! Transaction ID: \(details.transactionId)"
+            let successMessage = """
+            Payment successful!
+            Transaction ID: \(details.transactionId)
+            Customer Token: \(details.customerToken)
+            """
             print("✅ \(successMessage)")
             alertTitle = "Success"
             alertMessage = successMessage
             showAlert = true
             
-        case let .failure(error):
-            let errorMessage: String
-            switch error {
+        case let .failure(failure):
+            var errorMessage: String
+            switch failure.error {
             case let .declined(code):
                 errorMessage = "Payment was declined \(code.rawValue)"
             case .canceled:
@@ -362,7 +402,16 @@ private struct PayPipesEntryModifier: ViewModifier {
             @unknown default:
                 errorMessage = "Unknown error"
             }
-            print("❌ Transaction failed: \(errorMessage) [code=\(error.code)]")
+            
+            // Append partial data if available
+            if let transactionId = failure.transactionId {
+                errorMessage += "\nTransaction ID: \(transactionId)"
+            }
+            if let customerToken = failure.customerToken {
+                errorMessage += "\nCustomer Token: \(customerToken)"
+            }
+            
+            print("❌ Transaction failed: \(errorMessage) [code=\(failure.error.code)]")
             alertTitle = "Payment Failed"
             alertMessage = errorMessage
             showAlert = true
@@ -377,6 +426,10 @@ private enum Constants {
     static let clientSecret = "[YOUR CLIENT SECRET]"
     static let companyName = "[YOUR COMPANY NAME]"
     static let termsUrlString = "https://www.paypipes.com"
+    
+    /// Example callback URL for receiving transaction status updates.
+    /// In production, replace with your actual callback endpoint.
+    static let sampleCallbackUrl = URL(string: "https://example.com/paypipes/callback")
 
     static let defaultAmount = "10"
     static let defaultCurrency = "USD"
@@ -391,5 +444,5 @@ private enum Constants {
         postCode: "00000",
         country: "US"
     )
-    static let samplePhone = Phone(number: "5550100", countryCode: "+1")
+    static let samplePhone = Phone(number: "777777777", countryCode: "+420")
 }

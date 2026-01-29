@@ -162,6 +162,7 @@ public struct Address : Swift.Equatable {
 }
 public struct CardTransactionDetails {
   public let transactionId: Swift.String
+  public let customerToken: Swift.String
 }
 @_Concurrency.MainActor @preconcurrency public struct PayPipesCardTransactionController : SwiftUI.UIViewControllerRepresentable {
   public typealias UIViewControllerType = UIKit.UIViewController
@@ -179,13 +180,37 @@ extension SwiftUICore.View {
   
   #endif
 }
+public enum SDKLanguage : Swift.String, Swift.CaseIterable, Swift.Sendable {
+  case english
+  case czech
+  public var iso639Code: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func resolve(explicit: PayPipes.SDKLanguage?) -> PayPipes.SDKLanguage
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias AllCases = [PayPipes.SDKLanguage]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PayPipes.SDKLanguage] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public struct CardTransaction {
-  public init(amount: PayPipes.Money, orderId: Swift.String, billingInfo: PayPipes.BillingInfo, flowType: PayPipes.FlowType = .cardPayment, billingAddressRequired: Swift.Bool = false)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(amount: PayPipes.Money, orderId: Swift.String, customerDetails: PayPipes.CustomerDetails, flowType: PayPipes.FlowType = .cardPayment, billingAddressRequired: Swift.Bool = false, callbackUrl: Foundation.URL? = nil)
+  #endif
   public let amount: PayPipes.Money
   public let orderId: Swift.String
-  public var billingInfo: PayPipes.BillingInfo
+  public var customerDetails: PayPipes.CustomerDetails
   public let flowType: PayPipes.FlowType
   public let billingAddressRequired: Swift.Bool
+  public let callbackUrl: Foundation.URL?
 }
 public enum CardScheme : Swift.String, Swift.CaseIterable, Swift.Decodable {
   case visa
@@ -243,7 +268,7 @@ public enum CardTransactionDeclineCode : Swift.String, Swift.Decodable {
     get
   }
 }
-public struct Theme {
+public struct Theme : @unchecked Swift.Sendable {
   public var colors: PayPipes.Theme.Colors
   public var fonts: PayPipes.Theme.Fonts
   public var sizes: PayPipes.Theme.Sizes.Type
@@ -315,6 +340,19 @@ extension UIKit.UIColor {
   convenience public init(lightHex: Swift.String, darkHex: Swift.String)
   convenience public init(hex: Swift.String, alpha: CoreFoundation.CGFloat = 1.0)
 }
+public struct CustomerDetails : Swift.Equatable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(firstName: Swift.String, lastName: Swift.String, email: Swift.String, address: PayPipes.Address? = nil, phone: PayPipes.Phone? = nil, legalEntity: PayPipes.LegalEntity = .private, referenceId: Swift.String? = nil)
+  #endif
+  public let firstName: Swift.String
+  public let lastName: Swift.String
+  public let email: Swift.String
+  public var address: PayPipes.Address?
+  public let phone: PayPipes.Phone?
+  public let legalEntity: PayPipes.LegalEntity
+  public let referenceId: Swift.String?
+  public static func == (a: PayPipes.CustomerDetails, b: PayPipes.CustomerDetails) -> Swift.Bool
+}
 public enum FlowType {
   case cardPayment
   case cardStorage
@@ -363,21 +401,17 @@ public enum LegalEntity : Swift.String, Swift.CaseIterable, Swift.Codable {
     get
   }
 }
-public typealias CardTransactionResult = Swift.Result<PayPipes.CardTransactionDetails, PayPipes.CardTransactionError>
+public struct CardTransactionFailure : Swift.Error {
+  public let error: PayPipes.CardTransactionError
+  public let transactionId: Swift.String?
+  public let customerToken: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(error: PayPipes.CardTransactionError, transactionId: Swift.String? = nil, customerToken: Swift.String? = nil)
+  #endif
+}
+public typealias CardTransactionResult = Swift.Result<PayPipes.CardTransactionDetails, PayPipes.CardTransactionFailure>
 public protocol SDKError : Swift.Equatable, Swift.Error {
   var code: Swift.Int { get }
-}
-public struct BillingInfo : Swift.Equatable {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(firstName: Swift.String, lastName: Swift.String, email: Swift.String, address: PayPipes.Address? = nil, phone: PayPipes.Phone? = nil, legalEntity: PayPipes.LegalEntity = .private)
-  #endif
-  public let firstName: Swift.String
-  public let lastName: Swift.String
-  public let email: Swift.String
-  public var address: PayPipes.Address?
-  public let phone: PayPipes.Phone?
-  public let legalEntity: PayPipes.LegalEntity
-  public static func == (a: PayPipes.BillingInfo, b: PayPipes.BillingInfo) -> Swift.Bool
 }
 public struct Country : Swift.Equatable, Swift.Hashable, Swift.Codable, Swift.Identifiable, Swift.CustomStringConvertible {
   public var id: Swift.String {
@@ -468,7 +502,9 @@ public enum Environment {
   }
 }
 public struct Configuration {
-  public init(clientId: Swift.String, clientSecret: Swift.String, companyName: Swift.String, termsUrl: Foundation.URL, environment: PayPipes.Environment, theme: PayPipes.Theme = .default, isLoggingEnabled: Swift.Bool = false, isScreenCaptureEnabled: Swift.Bool = false)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(clientId: Swift.String, clientSecret: Swift.String, companyName: Swift.String, termsUrl: Foundation.URL, environment: PayPipes.Environment, theme: PayPipes.Theme = .default, isLoggingEnabled: Swift.Bool = false, isScreenCaptureEnabled: Swift.Bool = false, language: PayPipes.SDKLanguage? = nil)
+  #endif
   public let clientId: Swift.String
   public let clientSecret: Swift.String
   public let companyName: Swift.String
@@ -477,11 +513,15 @@ public struct Configuration {
   public let isLoggingEnabled: Swift.Bool
   public let theme: PayPipes.Theme
   public let isScreenCaptureEnabled: Swift.Bool
+  public let language: PayPipes.SDKLanguage?
 }
 extension PayPipes.ServerError.ServerErrorType : Swift.Equatable {}
 extension PayPipes.ServerError.ServerErrorType : Swift.Hashable {}
 extension PayPipes.ServerError.ServerErrorType : Swift.RawRepresentable {}
 extension PayPipes.PayPipesCardTransactionController : Swift.Sendable {}
+extension PayPipes.SDKLanguage : Swift.Equatable {}
+extension PayPipes.SDKLanguage : Swift.Hashable {}
+extension PayPipes.SDKLanguage : Swift.RawRepresentable {}
 extension PayPipes.CardScheme : Swift.Equatable {}
 extension PayPipes.CardScheme : Swift.Hashable {}
 extension PayPipes.CardScheme : Swift.RawRepresentable {}

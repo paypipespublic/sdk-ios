@@ -45,11 +45,13 @@ class ViewController: UIViewController {
     private var billingAddressProvided = false
     private var isBusinessCustomer = false
     private var isCustomThemeEnabled = false
+    private var selectedLanguage: SDKLanguage? = nil // nil = use system language
 
     // Billing info state
     private var firstName = Constants.defaultFirstName
     private var lastName = Constants.defaultLastName
     private var email = Constants.defaultEmail
+    private var referenceId: String = ""
 
     // MARK: - UI Components
 
@@ -198,6 +200,40 @@ class ViewController: UIViewController {
         switchControl: businessCustomerSwitch
     )
 
+    // MARK: - Language UI
+    
+    private lazy var languageTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "SDK Language"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textAlignment = .center
+        label.textColor = UIColor(hex: "1976D2")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var languageSubtitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Override SDK display language"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var languageSegmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["System", "English", "Czech"])
+        segmentedControl.selectedSegmentIndex = 0 // Default to System
+        segmentedControl.backgroundColor = .systemBackground
+        segmentedControl.selectedSegmentTintColor = UIColor(hex: "2196F3")
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(hex: "1976D2")], for: .normal)
+        segmentedControl.addTarget(self, action: #selector(languageChanged), for: .valueChanged)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        return segmentedControl
+    }()
+
     private lazy var billingInfoContainer: UIView = {
         let divider1 = createDivider()
         let divider2 = createDivider()
@@ -208,6 +244,7 @@ class ViewController: UIViewController {
             firstNameTextField,
             lastNameTextField,
             emailTextField,
+            referenceIdTextField,
             divider1,
             billingAddressRequiredRow,
             divider2,
@@ -281,6 +318,18 @@ class ViewController: UIViewController {
         return textField
     }()
 
+    private lazy var referenceIdTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Reference ID (optional)"
+        textField.text = referenceId
+        textField.borderStyle = .roundedRect
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(referenceIdChanged), for: .editingChanged)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+
     private lazy var themingTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Theming"
@@ -345,6 +394,9 @@ class ViewController: UIViewController {
             currencySegmentedControl,
             billingInfoTitleLabel,
             billingInfoContainer,
+            languageTitleLabel,
+            languageSubtitleLabel,
+            languageSegmentedControl,
             themingTitleLabel,
             customThemeContainer,
             paymentButton,
@@ -455,23 +507,25 @@ class ViewController: UIViewController {
             environment: .sandbox,
             theme: appliedTheme ?? .default,
             isLoggingEnabled: true,
-            isScreenCaptureEnabled: true
+            isScreenCaptureEnabled: true,
+            language: selectedLanguage
         )
     }
 
     /**
-     * Creates sample billing information for testing
+     * Creates sample customer details for testing
      *
      * In production, collect this information from your users
      */
-    private func createSampleBillingInfo() -> BillingInfo {
-        return BillingInfo(
+    private func createSampleCustomerDetails() -> CustomerDetails {
+        return CustomerDetails(
             firstName: firstName,
             lastName: lastName,
             email: email,
             address: billingAddressProvided ? Constants.sampleAddress : nil,
             phone: Constants.samplePhone,
-            legalEntity: isBusinessCustomer ? .business : .private
+            legalEntity: isBusinessCustomer ? .business : .private,
+            referenceId: referenceId.isEmpty ? nil : referenceId
         )
     }
 
@@ -491,9 +545,9 @@ class ViewController: UIViewController {
      */
     private func handleTransactionResult(_ result: CardTransactionResult) {
         switch result {
-        case let .failure(error):
-            let message: String
-            switch error {
+        case let .failure(failure):
+            var message: String
+            switch failure.error {
             case let .declined(code): message = "Payment was declined \(code.rawValue)"
             case .canceled: message = "Payment was cancelled"
             case .noSchemeForCurrency: message = "No payment scheme available for currency"
@@ -504,14 +558,27 @@ class ViewController: UIViewController {
             @unknown default:
                 message = "Unknown error"
             }
-            print("❌ Transaction failed: \(message) [code=\(error.code)]")
+            
+            // Append partial data if available
+            if let transactionId = failure.transactionId {
+                message += "\nTransaction ID: \(transactionId)"
+            }
+            if let customerToken = failure.customerToken {
+                message += "\nCustomer Token: \(customerToken)"
+            }
+            
+            print("❌ Transaction failed: \(message) [code=\(failure.error.code)]")
             presentAlert(
                 title: "Payment Failed",
                 message: message
             )
 
-        case let .success(cardTransactionDetails):
-            let successMessage = "Payment successful! Transaction ID: \(cardTransactionDetails.transactionId)"
+        case let .success(details):
+            let successMessage = """
+            Payment successful!
+            Transaction ID: \(details.transactionId)
+            Customer Token: \(details.customerToken)
+            """
             print("✅ \(successMessage)")
             presentAlert(
                 title: "Success",
@@ -554,6 +621,15 @@ class ViewController: UIViewController {
     @objc private func businessCustomerChanged() {
         isBusinessCustomer = businessCustomerSwitch.isOn
     }
+    
+    @objc private func languageChanged() {
+        switch languageSegmentedControl.selectedSegmentIndex {
+        case 0: selectedLanguage = nil           // System
+        case 1: selectedLanguage = .english      // English
+        case 2: selectedLanguage = .czech        // Czech
+        default: selectedLanguage = nil
+        }
+    }
 
     @objc private func firstNameChanged() {
         firstName = firstNameTextField.text ?? Constants.defaultFirstName
@@ -567,6 +643,10 @@ class ViewController: UIViewController {
         email = emailTextField.text ?? Constants.defaultEmail
     }
 
+    @objc private func referenceIdChanged() {
+        referenceId = referenceIdTextField.text ?? ""
+    }
+
     /**
      * Presents the PayPipes transaction controller
      *
@@ -575,16 +655,17 @@ class ViewController: UIViewController {
      */
     private func presentTransactionController(flowType: FlowType, amount: Money) {
         let configuration = createConfiguration()
-        let billingInfo = createSampleBillingInfo()
+        let customerDetails = createSampleCustomerDetails()
         let completion = createCompletionHandler()
 
         // Create transaction with provided parameters
         let transaction = CardTransaction(
             amount: amount,
             orderId: UUID().uuidString,
-            billingInfo: billingInfo,
+            customerDetails: customerDetails,
             flowType: flowType,
-            billingAddressRequired: billingAddressRequired
+            billingAddressRequired: billingAddressRequired,
+            callbackUrl: Constants.sampleCallbackUrl
         )
 
         do {
@@ -731,6 +812,10 @@ private enum Constants {
     static let clientSecret = "[YOUR CLIENT SECRET]"
     static let companyName = "[YOUR COMPANY NAME]"
     static let termsUrlString = "https://www.paypipes.com"
+    
+    /// Example callback URL for receiving transaction status updates.
+    /// In production, replace with your actual callback endpoint.
+    static let sampleCallbackUrl = URL(string: "https://example.com/paypipes/callback")
 
     static let defaultAmount = "10"
     static let defaultCurrency = "USD"
