@@ -1,6 +1,6 @@
 # PayPipes iOS SDK
 
-[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://github.com/paypipespublic/punext-pms-sdk-ios)
+[![Version](https://img.shields.io/badge/version-1.0.4-blue.svg)](https://github.com/paypipespublic/punext-pms-sdk-ios)
 [![Platform](https://img.shields.io/badge/platform-iOS%2015.0%2B-lightgrey.svg)](https://developer.apple.com/ios/)
 [![Swift](https://img.shields.io/badge/swift-5.9-orange.svg)](https://swift.org)
 ![License](https://img.shields.io/badge/license-Proprietary-red.svg)
@@ -39,7 +39,7 @@ Alternatively, add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/paypipespublic/punext-pms-sdk-ios.git", from: "1.0.3")
+    .package(url: "https://github.com/paypipespublic/punext-pms-sdk-ios.git", from: "1.0.4")
 ]
 ```
 
@@ -60,8 +60,11 @@ import PayPipes
 
 ### 2. Configure the SDK
 
+The SDK supports two authentication modes. Note that `Configuration` initializer throws on invalid input.
+
+**Option A: Client Credentials** (recommended for most integrations)
 ```swift
-let configuration = Configuration(
+let configuration = try Configuration(
     clientId: "your-client-id",
     clientSecret: "your-client-secret",
     companyName: "Your Company",
@@ -70,6 +73,16 @@ let configuration = Configuration(
     theme: .default,
     isLoggingEnabled: false,
     language: nil // Use system language, or .english, .czech
+)
+```
+
+**Option B: Access Token** (for server-managed authentication)
+```swift
+let configuration = try Configuration(
+    accessToken: "your-pre-obtained-oauth-token",
+    companyName: "Your Company",
+    termsUrl: URL(string: "https://yourcompany.com/terms")!,
+    environment: .production
 )
 ```
 
@@ -179,7 +192,7 @@ let customTheme = Theme(
     )
 )
 
-let configuration = Configuration(
+let configuration = try Configuration(
     clientId: "your-client-id",
     clientSecret: "your-client-secret",
     companyName: "Your Company",
@@ -289,12 +302,20 @@ Represents customer information for a transaction.
 
 ### Configuration
 
-SDK configuration settings.
+SDK configuration settings. The initializer throws `Configuration.ConfigurationError` on invalid input.
 
-#### Properties
+#### Authentication Properties (one of the following is required)
 
-- `clientId: String` - Your client ID
-- `clientSecret: String` - Your client secret
+| Property | Type | Description |
+|----------|------|-------------|
+| `clientId` | `String?` | Your client ID (required with `clientSecret`) |
+| `clientSecret` | `String?` | Your client secret (required with `clientId`) |
+| `accessToken` | `String?` | Pre-obtained OAuth token (alternative to client credentials) |
+
+> **Note:** Either `accessToken` OR both `clientId` and `clientSecret` must be provided.
+
+#### Other Properties
+
 - `companyName: String` - Displayed in payment form
 - `termsUrl: URL` - URL to your terms and conditions
 - `environment: Environment` - `.production` or `.sandbox`

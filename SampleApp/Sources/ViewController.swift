@@ -46,6 +46,8 @@ class ViewController: UIViewController {
     private var isBusinessCustomer = false
     private var isCustomThemeEnabled = false
     private var selectedLanguage: SDKLanguage? = nil // nil = use system language
+    private var useAccessToken = false
+    private var accessToken: String = ""
 
     // Billing info state
     private var firstName = Constants.defaultFirstName
@@ -199,6 +201,84 @@ class ViewController: UIViewController {
         subtitle: "Set legal entity to business",
         switchControl: businessCustomerSwitch
     )
+
+    // MARK: - Authentication UI
+    
+    private lazy var authTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Authentication"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textAlignment = .center
+        label.textColor = UIColor(hex: "1976D2")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var useAccessTokenSwitch: UISwitch = {
+        let switchControl = UISwitch()
+        switchControl.isOn = useAccessToken
+        switchControl.onTintColor = UIColor(hex: "2196F3")
+        switchControl.addTarget(self, action: #selector(useAccessTokenChanged), for: .valueChanged)
+        switchControl.translatesAutoresizingMaskIntoConstraints = false
+        return switchControl
+    }()
+    
+    private lazy var useAccessTokenRow: UIView = createSwitchRow(
+        title: "Use Access Token",
+        subtitle: "Use a pre-obtained token instead of client credentials",
+        switchControl: useAccessTokenSwitch
+    )
+    
+    private lazy var accessTokenTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Access Token"
+        textField.text = accessToken
+        textField.borderStyle = .roundedRect
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(accessTokenChanged), for: .editingChanged)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isHidden = !useAccessToken
+        return textField
+    }()
+    
+    private lazy var accessTokenDescLabel: UILabel = {
+        let label = UILabel()
+        label.text = "If provided, skips OAuth and uses this token directly"
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .secondaryLabel
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = !useAccessToken
+        return label
+    }()
+    
+    private lazy var authContainer: UIView = {
+        let stack = UIStackView(arrangedSubviews: [
+            useAccessTokenRow,
+            accessTokenTextField,
+            accessTokenDescLabel
+        ])
+        stack.axis = .vertical
+        stack.spacing = 12
+        stack.isLayoutMarginsRelativeArrangement = true
+        stack.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+
+        let container = UIView()
+        container.backgroundColor = .secondarySystemBackground
+        container.layer.cornerRadius = 12
+        container.addSubview(stack)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            stack.topAnchor.constraint(equalTo: container.topAnchor),
+            stack.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            stack.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: container.trailingAnchor)
+        ])
+
+        return container
+    }()
 
     // MARK: - Language UI
     
@@ -394,6 +474,8 @@ class ViewController: UIViewController {
             currencySegmentedControl,
             billingInfoTitleLabel,
             billingInfoContainer,
+            authTitleLabel,
+            authContainer,
             languageTitleLabel,
             languageSubtitleLabel,
             languageSegmentedControl,
@@ -494,22 +576,37 @@ class ViewController: UIViewController {
      * - Implement proper credential management
      * - Store credentials securely (e.g., Keychain)
      */
-    private func createConfiguration() -> Configuration {
+    private func createConfiguration() throws -> Configuration {
         guard let termsUrl = URL(string: Constants.termsUrlString) else {
             fatalError("Invalid terms URL. Please check Constants.termsUrlString")
         }
 
-        return Configuration(
-            clientId: Constants.clientId,
-            clientSecret: Constants.clientSecret,
-            companyName: Constants.companyName,
-            termsUrl: termsUrl,
-            environment: .sandbox,
-            theme: appliedTheme ?? .default,
-            isLoggingEnabled: true,
-            isScreenCaptureEnabled: true,
-            language: selectedLanguage
-        )
+        if useAccessToken && !accessToken.isEmpty {
+            // Use access token authentication
+            return try Configuration(
+                accessToken: accessToken,
+                companyName: Constants.companyName,
+                termsUrl: termsUrl,
+                environment: .sandbox,
+                theme: appliedTheme ?? .default,
+                isLoggingEnabled: true,
+                isScreenCaptureEnabled: true,
+                language: selectedLanguage
+            )
+        } else {
+            // Use client credentials authentication
+            return try Configuration(
+                clientId: Constants.clientId,
+                clientSecret: Constants.clientSecret,
+                companyName: Constants.companyName,
+                termsUrl: termsUrl,
+                environment: .sandbox,
+                theme: appliedTheme ?? .default,
+                isLoggingEnabled: true,
+                isScreenCaptureEnabled: true,
+                language: selectedLanguage
+            )
+        }
     }
 
     /**
@@ -646,6 +743,16 @@ class ViewController: UIViewController {
     @objc private func referenceIdChanged() {
         referenceId = referenceIdTextField.text ?? ""
     }
+    
+    @objc private func useAccessTokenChanged() {
+        useAccessToken = useAccessTokenSwitch.isOn
+        accessTokenTextField.isHidden = !useAccessToken
+        accessTokenDescLabel.isHidden = !useAccessToken
+    }
+    
+    @objc private func accessTokenChanged() {
+        accessToken = accessTokenTextField.text ?? ""
+    }
 
     /**
      * Presents the PayPipes transaction controller
@@ -654,7 +761,18 @@ class ViewController: UIViewController {
      * - Parameter amount: The transaction amount (use .zero for card storage)
      */
     private func presentTransactionController(flowType: FlowType, amount: Money) {
-        let configuration = createConfiguration()
+        let configuration: Configuration
+        do {
+            configuration = try createConfiguration()
+        } catch {
+            print("❌ Failed to create configuration: \(error)")
+            presentAlert(
+                title: "Configuration Error",
+                message: error.localizedDescription
+            )
+            return
+        }
+        
         let customerDetails = createSampleCustomerDetails()
         let completion = createCompletionHandler()
 

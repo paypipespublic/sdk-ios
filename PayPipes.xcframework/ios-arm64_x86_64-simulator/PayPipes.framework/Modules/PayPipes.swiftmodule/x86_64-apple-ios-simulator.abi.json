@@ -6860,6 +6860,46 @@
           },
           {
             "kind": "Var",
+            "name": "verve",
+            "printedName": "verve",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PayPipes.CardScheme.Type) -> PayPipes.CardScheme",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CardScheme",
+                    "printedName": "PayPipes.CardScheme",
+                    "usr": "s:8PayPipes10CardSchemeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PayPipes.CardScheme.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CardScheme",
+                        "printedName": "PayPipes.CardScheme",
+                        "usr": "s:8PayPipes10CardSchemeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8PayPipes10CardSchemeO5verveyA2CmF",
+            "mangledName": "$s8PayPipes10CardSchemeO5verveyA2CmF",
+            "moduleName": "PayPipes",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "unknown",
             "printedName": "unknown",
             "children": [
@@ -16358,9 +16398,274 @@
         "printedName": "Configuration",
         "children": [
           {
+            "kind": "TypeDecl",
+            "name": "ConfigurationError",
+            "printedName": "ConfigurationError",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "missingCredentials",
+                "printedName": "missingCredentials",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(PayPipes.Configuration.ConfigurationError.Type) -> PayPipes.Configuration.ConfigurationError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConfigurationError",
+                        "printedName": "PayPipes.Configuration.ConfigurationError",
+                        "usr": "s:8PayPipes13ConfigurationV0C5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "PayPipes.Configuration.ConfigurationError.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ConfigurationError",
+                            "printedName": "PayPipes.Configuration.ConfigurationError",
+                            "usr": "s:8PayPipes13ConfigurationV0C5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:8PayPipes13ConfigurationV0C5ErrorO18missingCredentialsyA2EmF",
+                "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO18missingCredentialsyA2EmF",
+                "moduleName": "PayPipes",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "errorDescription",
+                "printedName": "errorDescription",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:8PayPipes13ConfigurationV0C5ErrorO16errorDescriptionSSSgvp",
+                "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO16errorDescriptionSSSgvp",
+                "moduleName": "PayPipes",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:8PayPipes13ConfigurationV0C5ErrorO16errorDescriptionSSSgvg",
+                    "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO16errorDescriptionSSSgvg",
+                    "moduleName": "PayPipes",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "==",
+                "printedName": "==(_:_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConfigurationError",
+                    "printedName": "PayPipes.Configuration.ConfigurationError",
+                    "usr": "s:8PayPipes13ConfigurationV0C5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConfigurationError",
+                    "printedName": "PayPipes.Configuration.ConfigurationError",
+                    "usr": "s:8PayPipes13ConfigurationV0C5ErrorO"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8PayPipes13ConfigurationV0C5ErrorO2eeoiySbAE_AEtFZ",
+                "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO2eeoiySbAE_AEtFZ",
+                "moduleName": "PayPipes",
+                "static": true,
+                "implicit": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Var",
+                "name": "hashValue",
+                "printedName": "hashValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:8PayPipes13ConfigurationV0C5ErrorO9hashValueSivp",
+                "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO9hashValueSivp",
+                "moduleName": "PayPipes",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:8PayPipes13ConfigurationV0C5ErrorO9hashValueSivg",
+                    "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO9hashValueSivg",
+                    "moduleName": "PayPipes",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Function",
+                "name": "hash",
+                "printedName": "hash(into:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Hasher",
+                    "printedName": "Swift.Hasher",
+                    "paramValueOwnership": "InOut",
+                    "usr": "s:s6HasherV"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8PayPipes13ConfigurationV0C5ErrorO4hash4intoys6HasherVz_tF",
+                "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO4hash4intoys6HasherVz_tF",
+                "moduleName": "PayPipes",
+                "implicit": true,
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:8PayPipes13ConfigurationV0C5ErrorO",
+            "mangledName": "$s8PayPipes13ConfigurationV0C5ErrorO",
+            "moduleName": "PayPipes",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Error",
+                "printedName": "Error",
+                "usr": "s:s5ErrorP",
+                "mangledName": "$ss5ErrorP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "LocalizedError",
+                "printedName": "LocalizedError",
+                "usr": "s:10Foundation14LocalizedErrorP",
+                "mangledName": "$s10Foundation14LocalizedErrorP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(clientId:clientSecret:companyName:termsUrl:environment:theme:isLoggingEnabled:isScreenCaptureEnabled:language:)",
+            "printedName": "init(clientId:clientSecret:accessToken:companyName:termsUrl:environment:theme:isLoggingEnabled:isScreenCaptureEnabled:language:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -16370,15 +16675,48 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -16436,13 +16774,14 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8PayPipes13ConfigurationV8clientId0D6Secret11companyName8termsUrl11environment5theme16isLoggingEnabled0m13ScreenCaptureO08languageACSS_S2S10Foundation3URLVAA11EnvironmentOAA5ThemeVS2bAA11SDKLanguageOSgtcfc",
-            "mangledName": "$s8PayPipes13ConfigurationV8clientId0D6Secret11companyName8termsUrl11environment5theme16isLoggingEnabled0m13ScreenCaptureO08languageACSS_S2S10Foundation3URLVAA11EnvironmentOAA5ThemeVS2bAA11SDKLanguageOSgtcfc",
+            "usr": "s:8PayPipes13ConfigurationV8clientId0D6Secret11accessToken11companyName8termsUrl11environment5theme16isLoggingEnabled0o13ScreenCaptureQ08languageACSSSg_A2NSS10Foundation3URLVAA11EnvironmentOAA5ThemeVS2bAA11SDKLanguageOSgtKcfc",
+            "mangledName": "$s8PayPipes13ConfigurationV8clientId0D6Secret11accessToken11companyName8termsUrl11environment5theme16isLoggingEnabled0o13ScreenCaptureQ08languageACSSSg_A2NSS10Foundation3URLVAA11EnvironmentOAA5ThemeVS2bAA11SDKLanguageOSgtKcfc",
             "moduleName": "PayPipes",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "init_kind": "Designated"
           },
           {
@@ -16452,14 +16791,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:8PayPipes13ConfigurationV8clientIdSSvp",
-            "mangledName": "$s8PayPipes13ConfigurationV8clientIdSSvp",
+            "usr": "s:8PayPipes13ConfigurationV8clientIdSSSgvp",
+            "mangledName": "$s8PayPipes13ConfigurationV8clientIdSSSgvp",
             "moduleName": "PayPipes",
             "declAttributes": [
               "HasStorage",
@@ -16476,14 +16823,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:8PayPipes13ConfigurationV8clientIdSSvg",
-                "mangledName": "$s8PayPipes13ConfigurationV8clientIdSSvg",
+                "usr": "s:8PayPipes13ConfigurationV8clientIdSSSgvg",
+                "mangledName": "$s8PayPipes13ConfigurationV8clientIdSSSgvg",
                 "moduleName": "PayPipes",
                 "implicit": true,
                 "accessorKind": "get"
@@ -16497,14 +16852,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:8PayPipes13ConfigurationV12clientSecretSSvp",
-            "mangledName": "$s8PayPipes13ConfigurationV12clientSecretSSvp",
+            "usr": "s:8PayPipes13ConfigurationV12clientSecretSSSgvp",
+            "mangledName": "$s8PayPipes13ConfigurationV12clientSecretSSSgvp",
             "moduleName": "PayPipes",
             "declAttributes": [
               "HasStorage",
@@ -16521,14 +16884,83 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PayPipes13ConfigurationV12clientSecretSSSgvg",
+                "mangledName": "$s8PayPipes13ConfigurationV12clientSecretSSSgvg",
+                "moduleName": "PayPipes",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accessToken",
+            "printedName": "accessToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
                     "name": "String",
                     "printedName": "Swift.String",
                     "usr": "s:SS"
                   }
                 ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PayPipes13ConfigurationV11accessTokenSSSgvp",
+            "mangledName": "$s8PayPipes13ConfigurationV11accessTokenSSSgvp",
+            "moduleName": "PayPipes",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
                 "declKind": "Accessor",
-                "usr": "s:8PayPipes13ConfigurationV12clientSecretSSvg",
-                "mangledName": "$s8PayPipes13ConfigurationV12clientSecretSSvg",
+                "usr": "s:8PayPipes13ConfigurationV11accessTokenSSSgvg",
+                "mangledName": "$s8PayPipes13ConfigurationV11accessTokenSSSgvg",
                 "moduleName": "PayPipes",
                 "implicit": true,
                 "accessorKind": "get"
@@ -18401,21 +18833,21 @@
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/UI\/CardPaymentForm\/CardTransactionFormController.swift",
       "kind": "BooleanLiteral",
-      "offset": 36643,
+      "offset": 36745,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/CardTransaction.swift",
       "kind": "IntegerLiteral",
-      "offset": 383,
+      "offset": 378,
       "length": 4,
       "value": "2048"
     },
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/CardTransaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 1168,
+      "offset": 1159,
       "length": 5,
       "value": "false"
     },
@@ -18753,7 +19185,7 @@
       "kind": "StringLiteral",
       "offset": 320,
       "length": 7,
-      "value": "\"1.0.3\""
+      "value": "\"1.0.4\""
     },
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
@@ -18774,7 +19206,7 @@
       "kind": "IntegerLiteral",
       "offset": 463,
       "length": 1,
-      "value": "3"
+      "value": "4"
     },
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",
@@ -20053,14 +20485,14 @@
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Configuration.swift",
       "kind": "BooleanLiteral",
-      "offset": 1592,
+      "offset": 2954,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Model\/Core\/Configuration.swift",
       "kind": "BooleanLiteral",
-      "offset": 1638,
+      "offset": 3000,
       "length": 5,
       "value": "false"
     },

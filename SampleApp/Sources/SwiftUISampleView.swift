@@ -112,6 +112,21 @@ struct SwiftUISampleView: View {
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
 
+                Text("Access Token (Optional)").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
+                
+                VStack(spacing: 8) {
+                    Text("Provide a pre-obtained OAuth token to skip authentication")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    TextField("Access Token", text: $accessToken)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.system(size: 14, design: .monospaced))
+                }
+                .padding()
+                .background(Color(UIColor.secondarySystemBackground))
+                .cornerRadius(12)
+                
                 Text("SDK Language").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
                 
                 VStack(spacing: 8) {
@@ -224,22 +239,42 @@ struct SwiftUISampleView: View {
     // Language state
     @State private var selectedLanguage: SDKLanguage? = nil // nil = use system language
     @State private var languageSelection: Int = 0 // 0 = System, 1 = English, 2 = Czech
+    
+    // Access Token state (optional - for testing with pre-obtained tokens)
+    @State private var accessToken: String = ""
 
     private var configuration: Configuration {
         guard let termsUrl = URL(string: Constants.termsUrlString) else {
             fatalError("Invalid terms URL. Please check Constants.termsUrlString")
         }
 
-        return Configuration(
-            clientId: Constants.clientId,
-            clientSecret: Constants.clientSecret,
-            companyName: Constants.companyName,
-            termsUrl: termsUrl,
-            environment: .sandbox,
-            theme: isCustomThemeEnabled ? customTheme : .default,
-            isLoggingEnabled: true,
-            language: selectedLanguage
-        )
+        do {
+            // Use access token if provided, otherwise use client credentials
+            if !accessToken.isEmpty {
+                return try Configuration(
+                    accessToken: accessToken,
+                    companyName: Constants.companyName,
+                    termsUrl: termsUrl,
+                    environment: .sandbox,
+                    theme: isCustomThemeEnabled ? customTheme : .default,
+                    isLoggingEnabled: true,
+                    language: selectedLanguage
+                )
+            } else {
+                return try Configuration(
+                    clientId: Constants.clientId,
+                    clientSecret: Constants.clientSecret,
+                    companyName: Constants.companyName,
+                    termsUrl: termsUrl,
+                    environment: .sandbox,
+                    theme: isCustomThemeEnabled ? customTheme : .default,
+                    isLoggingEnabled: true,
+                    language: selectedLanguage
+                )
+            }
+        } catch {
+            fatalError("Invalid configuration: \(error.localizedDescription)")
+        }
     }
 
     private var paymentButtonTitle: String {

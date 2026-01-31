@@ -222,6 +222,7 @@ public enum CardScheme : Swift.String, Swift.CaseIterable, Swift.Decodable {
   case diners
   case unionpay
   case cartesBancaires
+  case verve
   case unknown
   public static var all: [PayPipes.CardScheme] {
     get
@@ -502,11 +503,25 @@ public enum Environment {
   }
 }
 public struct Configuration {
+  public enum ConfigurationError : Swift.Error, Foundation.LocalizedError {
+    case missingCredentials
+    #if compiler(>=5.3) && $NonescapableTypes
+    public var errorDescription: Swift.String? {
+      get
+    }
+    #endif
+    public static func == (a: PayPipes.Configuration.ConfigurationError, b: PayPipes.Configuration.ConfigurationError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(clientId: Swift.String, clientSecret: Swift.String, companyName: Swift.String, termsUrl: Foundation.URL, environment: PayPipes.Environment, theme: PayPipes.Theme = .default, isLoggingEnabled: Swift.Bool = false, isScreenCaptureEnabled: Swift.Bool = false, language: PayPipes.SDKLanguage? = nil)
+  public init(clientId: Swift.String? = nil, clientSecret: Swift.String? = nil, accessToken: Swift.String? = nil, companyName: Swift.String, termsUrl: Foundation.URL, environment: PayPipes.Environment, theme: PayPipes.Theme = .default, isLoggingEnabled: Swift.Bool = false, isScreenCaptureEnabled: Swift.Bool = false, language: PayPipes.SDKLanguage? = nil) throws
   #endif
-  public let clientId: Swift.String
-  public let clientSecret: Swift.String
+  public let clientId: Swift.String?
+  public let clientSecret: Swift.String?
+  public let accessToken: Swift.String?
   public let companyName: Swift.String
   public let termsUrl: Foundation.URL
   public let environment: PayPipes.Environment
@@ -536,3 +551,5 @@ extension PayPipes.LegalEntity : Swift.Hashable {}
 extension PayPipes.LegalEntity : Swift.RawRepresentable {}
 extension PayPipes.Environment : Swift.Equatable {}
 extension PayPipes.Environment : Swift.Hashable {}
+extension PayPipes.Configuration.ConfigurationError : Swift.Equatable {}
+extension PayPipes.Configuration.ConfigurationError : Swift.Hashable {}
