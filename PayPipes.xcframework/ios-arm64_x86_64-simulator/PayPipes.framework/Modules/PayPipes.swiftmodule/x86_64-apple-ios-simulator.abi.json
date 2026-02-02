@@ -19185,7 +19185,7 @@
       "kind": "StringLiteral",
       "offset": 320,
       "length": 7,
-      "value": "\"1.0.4\""
+      "value": "\"1.0.5\""
     },
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Core\/Version.swift",
@@ -19206,7 +19206,7 @@
       "kind": "IntegerLiteral",
       "offset": 463,
       "length": 1,
-      "value": "4"
+      "value": "5"
     },
     {
       "filePath": "\/Users\/pavelnemecek\/Projects\/Purple\/punext-pms-sdk-ios\/PayPipesSDK\/PayPipes\/Source\/Logging\/Logger.swift",

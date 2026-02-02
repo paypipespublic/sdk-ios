@@ -262,15 +262,15 @@ struct SwiftUISampleView: View {
                 )
             } else {
                 return try Configuration(
-                    clientId: Constants.clientId,
-                    clientSecret: Constants.clientSecret,
-                    companyName: Constants.companyName,
-                    termsUrl: termsUrl,
-                    environment: .sandbox,
-                    theme: isCustomThemeEnabled ? customTheme : .default,
-                    isLoggingEnabled: true,
-                    language: selectedLanguage
-                )
+            clientId: Constants.clientId,
+            clientSecret: Constants.clientSecret,
+            companyName: Constants.companyName,
+            termsUrl: termsUrl,
+            environment: .sandbox,
+            theme: isCustomThemeEnabled ? customTheme : .default,
+            isLoggingEnabled: true,
+            language: selectedLanguage
+        )
             }
         } catch {
             fatalError("Invalid configuration: \(error.localizedDescription)")

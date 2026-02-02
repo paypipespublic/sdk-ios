@@ -596,16 +596,16 @@ class ViewController: UIViewController {
         } else {
             // Use client credentials authentication
             return try Configuration(
-                clientId: Constants.clientId,
-                clientSecret: Constants.clientSecret,
-                companyName: Constants.companyName,
-                termsUrl: termsUrl,
-                environment: .sandbox,
-                theme: appliedTheme ?? .default,
-                isLoggingEnabled: true,
-                isScreenCaptureEnabled: true,
-                language: selectedLanguage
-            )
+            clientId: Constants.clientId,
+            clientSecret: Constants.clientSecret,
+            companyName: Constants.companyName,
+            termsUrl: termsUrl,
+            environment: .sandbox,
+            theme: appliedTheme ?? .default,
+            isLoggingEnabled: true,
+            isScreenCaptureEnabled: true,
+            language: selectedLanguage
+        )
         }
     }
 
