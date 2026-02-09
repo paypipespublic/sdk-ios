@@ -1,6 +1,6 @@
 # PayPipes iOS SDK
 
-[![Version](https://img.shields.io/badge/version-1.0.4-blue.svg)](https://github.com/paypipespublic/punext-pms-sdk-ios)
+[![Version](https://img.shields.io/badge/version-1.0.6-blue.svg)](https://github.com/paypipespublic/punext-pms-sdk-ios)
 [![Platform](https://img.shields.io/badge/platform-iOS%2015.0%2B-lightgrey.svg)](https://developer.apple.com/ios/)
 [![Swift](https://img.shields.io/badge/swift-5.9-orange.svg)](https://swift.org)
 ![License](https://img.shields.io/badge/license-Proprietary-red.svg)
@@ -39,7 +39,7 @@ Alternatively, add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/paypipespublic/punext-pms-sdk-ios.git", from: "1.0.4")
+    .package(url: "https://github.com/paypipespublic/punext-pms-sdk-ios.git", from: "1.0.6")
 ]
 ```
 
@@ -88,8 +88,8 @@ let configuration = try Configuration(
 
 ### 3. Create a Transaction
 
+**Option A: With Customer Details** (SDK creates the customer)
 ```swift
-// CustomerDetails is required
 let customerDetails = CustomerDetails(
     firstName: "John",
     lastName: "Smith",
@@ -108,6 +108,17 @@ let transaction = CardTransaction(
     flowType: .cardPayment,
     billingAddressRequired: false,
     callbackUrl: nil // Optional: URL for server callbacks
+)
+```
+
+**Option B: With Customer Token** (customer already tokenized on your backend)
+```swift
+let transaction = CardTransaction(
+    amount: Money(amount: 10.00, currency: "USD"),
+    orderId: UUID().uuidString,
+    customerToken: "your-pre-existing-customer-token",
+    flowType: .cardPayment,
+    billingAddressRequired: false
 )
 ```
 
@@ -213,7 +224,7 @@ The following fields are optional:
 - `address: Address?` - Customer's billing address
 - `phone: Phone?` - Customer's phone number
 - `legalEntity: LegalEntity` - `.private` (default) or `.business`
-- `referenceId: String?` - Your unique customer identifier (max 255 chars)
+- `referenceId: String?` - Your unique customer identifier (max 64 chars)
 
 ```swift
 // Minimal required CustomerDetails
@@ -278,10 +289,13 @@ Represents a payment transaction.
 
 - `amount: Money` - The transaction amount
 - `orderId: String` - Unique order identifier
-- `customerDetails: CustomerDetails` - **Required** customer information
+- `customerDetails: CustomerDetails?` - Customer information (required if `customerToken` is not provided)
+- `customerToken: String?` - Pre-existing customer token (required if `customerDetails` is not provided)
 - `flowType: FlowType` - Transaction type (`.cardPayment` or `.cardStorage`)
 - `billingAddressRequired: Bool` - Whether billing address is required
 - `callbackUrl: URL?` - Optional URL for server callbacks
+
+> **Note:** Either `customerDetails` OR `customerToken` must be provided (not both).
 
 ### CustomerDetails
 
@@ -298,7 +312,7 @@ Represents customer information for a transaction.
 - `address: Address?` - Customer's billing address
 - `phone: Phone?` - Customer's phone number
 - `legalEntity: LegalEntity` - `.private` (default) or `.business`
-- `referenceId: String?` - Your unique customer identifier (max 255 chars)
+- `referenceId: String?` - Your unique customer identifier (max 64 chars)
 
 ### Configuration
 

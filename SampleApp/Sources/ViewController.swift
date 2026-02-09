@@ -54,6 +54,10 @@ class ViewController: UIViewController {
     private var lastName = Constants.defaultLastName
     private var email = Constants.defaultEmail
     private var referenceId: String = ""
+    
+    // Customer token state
+    private var useCustomerToken = false
+    private var customerTokenValue: String = ""
 
     // MARK: - UI Components
 
@@ -133,7 +137,7 @@ class ViewController: UIViewController {
     }()
 
     private lazy var currencySegmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["USD", "EUR", "JPY"])
+        let segmentedControl = UISegmentedControl(items: ["USD", "EUR", "JPY", "CZK"])
         segmentedControl.selectedSegmentIndex = 0 // Default to USD
         segmentedControl.backgroundColor = .systemBackground
         segmentedControl.selectedSegmentTintColor = UIColor(hex: "2196F3")
@@ -201,6 +205,36 @@ class ViewController: UIViewController {
         subtitle: "Set legal entity to business",
         switchControl: businessCustomerSwitch
     )
+
+    // MARK: - Customer Token UI
+    
+    private lazy var useCustomerTokenSwitch: UISwitch = {
+        let switchControl = UISwitch()
+        switchControl.isOn = useCustomerToken
+        switchControl.onTintColor = UIColor(hex: "2196F3")
+        switchControl.addTarget(self, action: #selector(useCustomerTokenChanged), for: .valueChanged)
+        switchControl.translatesAutoresizingMaskIntoConstraints = false
+        return switchControl
+    }()
+    
+    private lazy var useCustomerTokenRow: UIView = createSwitchRow(
+        title: "Use Customer Token",
+        subtitle: "Use a pre-tokenized customer instead of customer details",
+        switchControl: useCustomerTokenSwitch
+    )
+    
+    private lazy var customerTokenTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Customer Token"
+        textField.text = customerTokenValue
+        textField.borderStyle = .roundedRect
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(customerTokenChanged), for: .editingChanged)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isHidden = !useCustomerToken
+        return textField
+    }()
 
     // MARK: - Authentication UI
     
@@ -319,8 +353,12 @@ class ViewController: UIViewController {
         let divider2 = createDivider()
 
         let divider3 = createDivider()
+        let divider4 = createDivider()
         
         let stack = UIStackView(arrangedSubviews: [
+            useCustomerTokenRow,
+            customerTokenTextField,
+            divider4,
             firstNameTextField,
             lastNameTextField,
             emailTextField,
@@ -519,7 +557,7 @@ class ViewController: UIViewController {
         let features = [
             "• Card payment processing",
             "• Card storage for future payments",
-            "• Multi-currency support (USD, EUR, JPY)",
+            "• Multi-currency support (USD, EUR, JPY, CZK)",
             "• Optional billing address collection",
             "• Result callbacks",
             "• Custom theming system"
@@ -693,11 +731,11 @@ class ViewController: UIViewController {
     }
 
     @objc private func presentCardStorageController() {
-        presentTransactionController(flowType: .cardStorage, amount: .zero)
+        presentTransactionController(flowType: .cardStorage, amount: Money(amount: 0.0, currency: selectedCurrency))
     }
 
     @objc private func currencyChanged() {
-        let currencies = ["USD", "EUR", "JPY"]
+        let currencies = ["USD", "EUR", "JPY", "CZK"]
         selectedCurrency = currencies[currencySegmentedControl.selectedSegmentIndex]
         updatePaymentButtonText()
     }
@@ -753,6 +791,23 @@ class ViewController: UIViewController {
     @objc private func accessTokenChanged() {
         accessToken = accessTokenTextField.text ?? ""
     }
+    
+    @objc private func useCustomerTokenChanged() {
+        useCustomerToken = useCustomerTokenSwitch.isOn
+        customerTokenTextField.isHidden = !useCustomerToken
+        
+        // Hide/show customer details fields
+        firstNameTextField.isHidden = useCustomerToken
+        lastNameTextField.isHidden = useCustomerToken
+        emailTextField.isHidden = useCustomerToken
+        referenceIdTextField.isHidden = useCustomerToken
+        billingAddressProvidedSwitch.isEnabled = !useCustomerToken
+        businessCustomerSwitch.isEnabled = !useCustomerToken
+    }
+    
+    @objc private func customerTokenChanged() {
+        customerTokenValue = customerTokenTextField.text ?? ""
+    }
 
     /**
      * Presents the PayPipes transaction controller
@@ -773,18 +828,30 @@ class ViewController: UIViewController {
             return
         }
         
-        let customerDetails = createSampleCustomerDetails()
         let completion = createCompletionHandler()
 
         // Create transaction with provided parameters
-        let transaction = CardTransaction(
-            amount: amount,
-            orderId: UUID().uuidString,
-            customerDetails: customerDetails,
-            flowType: flowType,
-            billingAddressRequired: billingAddressRequired,
-            callbackUrl: Constants.sampleCallbackUrl
-        )
+        let transaction: CardTransaction
+        if useCustomerToken && !customerTokenValue.isEmpty {
+            transaction = CardTransaction(
+                amount: amount,
+                orderId: UUID().uuidString,
+                customerToken: customerTokenValue,
+                flowType: flowType,
+                billingAddressRequired: billingAddressRequired,
+                callbackUrl: Constants.sampleCallbackUrl
+            )
+        } else {
+            let customerDetails = createSampleCustomerDetails()
+            transaction = CardTransaction(
+                amount: amount,
+                orderId: UUID().uuidString,
+                customerDetails: customerDetails,
+                flowType: flowType,
+                billingAddressRequired: billingAddressRequired,
+                callbackUrl: Constants.sampleCallbackUrl
+            )
+        }
 
         do {
             // Build the transaction controller
@@ -944,7 +1011,7 @@ private enum Constants {
     static let sampleAddress = Address(
         street: "123 Fake Street",
         city: "Test City",
-        state: "TS",
+        state: "AR",
         postCode: "00000",
         country: "US"
     )

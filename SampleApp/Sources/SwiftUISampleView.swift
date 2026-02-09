@@ -45,15 +45,37 @@ struct SwiftUISampleView: View {
                     Text("USD").tag("USD")
                     Text("EUR").tag("EUR")
                     Text("JPY").tag("JPY")
+                    Text("CZK").tag("CZK")
                 }.pickerStyle(.segmented)
 
                 Text("Customer").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
 
                 VStack(spacing: 12) {
-                    TextField("First Name", text: $firstName).textFieldStyle(.roundedBorder)
-                    TextField("Last Name", text: $lastName).textFieldStyle(.roundedBorder)
-                    TextField("Email", text: $email).textFieldStyle(.roundedBorder)
-                    TextField("Reference ID (optional)", text: $referenceId).textFieldStyle(.roundedBorder)
+                    Toggle(isOn: $useCustomerToken) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Use Customer Token")
+                                .font(.system(size: 16, weight: .medium))
+                            Text("Use a pre-tokenized customer instead of customer details")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    
+
+                    if useCustomerToken {
+                        TextField("Customer Token", text: $customerTokenValue)
+                            .textFieldStyle(.roundedBorder)
+                            .font(.system(size: 14, design: .monospaced))
+                    }
+
+                    if !useCustomerToken {
+                        Divider()
+
+                        TextField("First Name", text: $firstName).textFieldStyle(.roundedBorder)
+                        TextField("Last Name", text: $lastName).textFieldStyle(.roundedBorder)
+                        TextField("Email", text: $email).textFieldStyle(.roundedBorder)
+                        TextField("Reference ID (optional)", text: $referenceId).textFieldStyle(.roundedBorder)
+                    }
 
                     Divider()
 
@@ -66,28 +88,31 @@ struct SwiftUISampleView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
+                    
 
-                    Divider()
+                    if !useCustomerToken {
+                        Divider()
 
-                    Toggle(isOn: $billingAddressProvided) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Billing address provided")
-                                .font(.system(size: 16, weight: .medium))
-                            Text("Billing address provided by the merchant")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                        Toggle(isOn: $billingAddressProvided) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Billing address provided")
+                                    .font(.system(size: 16, weight: .medium))
+                                Text("Billing address provided by the merchant")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
                         }
-                    }
 
-                    Divider()
+                        Divider()
 
-                    Toggle(isOn: $isBusinessCustomer) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Business customer")
-                                .font(.system(size: 16, weight: .medium))
-                            Text("Set legal entity to business")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                        Toggle(isOn: $isBusinessCustomer) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Business customer")
+                                    .font(.system(size: 16, weight: .medium))
+                                Text("Set legal entity to business")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
                 }
@@ -126,7 +151,7 @@ struct SwiftUISampleView: View {
                 .padding()
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
-                
+
                 Text("SDK Language").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
                 
                 VStack(spacing: 8) {
@@ -183,7 +208,7 @@ struct SwiftUISampleView: View {
                 Text([
                     "• Card payment processing",
                     "• Card storage for future payments",
-                    "• Multi-currency support (USD, EUR, JPY)",
+                    "• Multi-currency support (USD, EUR, JPY, CZK)",
                     "• Optional billing address collection",
                     "• Result callbacks",
                     "• Custom theming system"
@@ -205,6 +230,8 @@ struct SwiftUISampleView: View {
             currency: selectedCurrency,
             amount: amount,
             billingAddressRequired: billingAddressRequired,
+            useCustomerToken: useCustomerToken,
+            customerTokenValue: customerTokenValue,
             buildCustomerDetails: buildCustomerDetails,
             showAlert: $showAlert,
             alertTitle: $alertTitle,
@@ -230,6 +257,8 @@ struct SwiftUISampleView: View {
     @State private var email: String = Constants.defaultEmail
     @State private var referenceId: String = ""
     @State private var isCustomThemeEnabled: Bool = false
+    @State private var useCustomerToken: Bool = false
+    @State private var customerTokenValue: String = ""
     
     // Alert state
     @State private var alertTitle: String = ""
@@ -367,6 +396,8 @@ private struct PayPipesEntryModifier: ViewModifier {
     let currency: String
     let amount: String
     let billingAddressRequired: Bool
+    let useCustomerToken: Bool
+    let customerTokenValue: String
     let buildCustomerDetails: () -> CustomerDetails
     @Binding var showAlert: Bool
     @Binding var alertTitle: String
@@ -375,14 +406,26 @@ private struct PayPipesEntryModifier: ViewModifier {
     func body(content: Content) -> some View {
         let defaultAmountValue = Double(Constants.defaultAmount) ?? 10.0
         let amountValue = Decimal(Double(amount) ?? defaultAmountValue)
-        let transaction = CardTransaction(
-            amount: Money(amount: amountValue, currency: currency),
-            orderId: orderSeed.uuidString,
-            customerDetails: buildCustomerDetails(),
-            flowType: .cardPayment,
-            billingAddressRequired: billingAddressRequired,
-            callbackUrl: Constants.sampleCallbackUrl
-        )
+        let transaction: CardTransaction
+        if useCustomerToken && !customerTokenValue.isEmpty {
+            transaction = CardTransaction(
+                amount: Money(amount: amountValue, currency: currency),
+                orderId: orderSeed.uuidString,
+                customerToken: customerTokenValue,
+                flowType: .cardPayment,
+                billingAddressRequired: billingAddressRequired,
+                callbackUrl: Constants.sampleCallbackUrl
+            )
+        } else {
+            transaction = CardTransaction(
+                amount: Money(amount: amountValue, currency: currency),
+                orderId: orderSeed.uuidString,
+                customerDetails: buildCustomerDetails(),
+                flowType: .cardPayment,
+                billingAddressRequired: billingAddressRequired,
+                callbackUrl: Constants.sampleCallbackUrl
+            )
+        }
 
         return content
             .onChange(of: isPresented) { newValue in
@@ -475,7 +518,7 @@ private enum Constants {
     static let sampleAddress = Address(
         street: "123 Fake Street",
         city: "Test City",
-        state: "TS",
+        state: "AR",
         postCode: "00000",
         country: "US"
     )

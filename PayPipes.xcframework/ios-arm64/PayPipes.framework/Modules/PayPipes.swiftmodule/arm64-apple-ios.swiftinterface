@@ -203,11 +203,12 @@ public enum SDKLanguage : Swift.String, Swift.CaseIterable, Swift.Sendable {
 }
 public struct CardTransaction {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(amount: PayPipes.Money, orderId: Swift.String, customerDetails: PayPipes.CustomerDetails, flowType: PayPipes.FlowType = .cardPayment, billingAddressRequired: Swift.Bool = false, callbackUrl: Foundation.URL? = nil)
+  public init(amount: PayPipes.Money, orderId: Swift.String, customerDetails: PayPipes.CustomerDetails? = nil, customerToken: Swift.String? = nil, flowType: PayPipes.FlowType = .cardPayment, billingAddressRequired: Swift.Bool = false, callbackUrl: Foundation.URL? = nil)
   #endif
   public let amount: PayPipes.Money
   public let orderId: Swift.String
-  public var customerDetails: PayPipes.CustomerDetails
+  public var customerDetails: PayPipes.CustomerDetails?
+  public let customerToken: Swift.String?
   public let flowType: PayPipes.FlowType
   public let billingAddressRequired: Swift.Bool
   public let callbackUrl: Foundation.URL?
