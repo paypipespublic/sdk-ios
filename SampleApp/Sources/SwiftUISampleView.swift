@@ -60,7 +60,6 @@ struct SwiftUISampleView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
-                    
 
                     if useCustomerToken {
                         TextField("Customer Token", text: $customerTokenValue)
@@ -88,69 +87,67 @@ struct SwiftUISampleView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
-                    
 
-                    if !useCustomerToken {
-                        Divider()
+                    Divider()
 
-                        Toggle(isOn: $billingAddressProvided) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Billing address provided")
-                                    .font(.system(size: 16, weight: .medium))
-                                Text("Billing address provided by the merchant")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-
-                        Divider()
-
-                        Toggle(isOn: $isBusinessCustomer) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Business customer")
-                                    .font(.system(size: 16, weight: .medium))
-                                Text("Set legal entity to business")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                    }
-                }
-                .padding()
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(12)
-
-                Text("Custom Theme").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
-
-                VStack(spacing: 12) {
-                    Toggle(isOn: $isCustomThemeEnabled) {
+                    Toggle(isOn: $billingAddressProvided) {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Apply Custom Theme")
+                            Text("Billing address provided")
                                 .font(.system(size: 16, weight: .medium))
-                            Text("Apply a blue custom theme to the SDK UI")
+                            Text("Billing address provided by the merchant")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
                     }
+                    .disabled(useCustomerToken)
+
+                    Divider()
+
+                    Toggle(isOn: $isBusinessCustomer) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Business customer")
+                                .font(.system(size: 16, weight: .medium))
+                            Text("Set legal entity to business")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    .disabled(useCustomerToken)
                 }
                 .padding()
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
 
-                Text("Access Token (Optional)").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
-                
-                VStack(spacing: 8) {
-                    Text("Provide a pre-obtained OAuth token to skip authentication")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                    
-                    TextField("Access Token", text: $accessToken)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.system(size: 14, design: .monospaced))
+                // MARK: - Authentication
+
+                Text("Authentication").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
+
+                VStack(spacing: 12) {
+                    Toggle(isOn: $useAccessToken) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Use Access Token")
+                                .font(.system(size: 16, weight: .medium))
+                            Text("Use a pre-obtained token instead of client credentials")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+
+                    if useAccessToken {
+                        TextField("Access Token", text: $accessToken)
+                            .textFieldStyle(.roundedBorder)
+                            .font(.system(size: 14, design: .monospaced))
+
+                        Text("If provided, skips OAuth and uses this token directly")
+                            .font(.system(size: 12))
+                            .foregroundColor(.secondary)
+                    }
                 }
                 .padding()
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
+
+                // MARK: - Language
 
                 Text("SDK Language").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
                 
@@ -178,10 +175,32 @@ struct SwiftUISampleView: View {
                 .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
 
+                // MARK: - Theming
+
+                Text("Theming").font(.system(size: 18, weight: .bold)).foregroundColor(Color(UIColor(hex: "1976D2")))
+
+                VStack(spacing: 12) {
+                    Toggle(isOn: $isCustomThemeEnabled) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Apply Custom Theme")
+                                .font(.system(size: 16, weight: .medium))
+                            Text("Apply a blue custom theme to the SDK UI")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                .padding()
+                .background(Color(UIColor.secondarySystemBackground))
+                .cornerRadius(12)
+
+                // MARK: - Action Buttons
+
                 Button(action: {
+                    selectedFlowType = .cardPayment
                     isPresentingPayPipes = true
                 }) {
-                    Text(paymentButtonTitle)
+                    Text("Test Card Payment")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
@@ -191,6 +210,7 @@ struct SwiftUISampleView: View {
                 }
 
                 Button(action: {
+                    selectedFlowType = .cardStorage
                     isPresentingPayPipes = true
                 }) {
                     Text("Test Card Storage")
@@ -224,11 +244,19 @@ struct SwiftUISampleView: View {
         .scrollDismissesKeyboard(.interactively)
         .background(Color(.systemBackground))
         .navigationTitle("SwiftUI Example")
+        .safeAreaInset(edge: .bottom) {
+            Text("SDK Version: \(Version.marketingVersion)")
+                .font(.system(size: 14))
+                .foregroundColor(Color(UIColor.tertiaryLabel))
+                .frame(maxWidth: .infinity)
+                .padding(.bottom, 12)
+        }
         .modifier(PayPipesEntryModifier(
             isPresented: $isPresentingPayPipes,
             configuration: configuration,
             currency: selectedCurrency,
             amount: amount,
+            flowType: selectedFlowType,
             billingAddressRequired: billingAddressRequired,
             useCustomerToken: useCustomerToken,
             customerTokenValue: customerTokenValue,
@@ -247,6 +275,7 @@ struct SwiftUISampleView: View {
     // MARK: - Private
 
     @State private var isPresentingPayPipes = false
+    @State private var selectedFlowType: FlowType = .cardPayment
     @State private var selectedCurrency: String = Constants.defaultCurrency
     @State private var amount: String = Constants.defaultAmount
     @State private var billingAddressRequired: Bool = false
@@ -269,7 +298,8 @@ struct SwiftUISampleView: View {
     @State private var selectedLanguage: SDKLanguage? = nil // nil = use system language
     @State private var languageSelection: Int = 0 // 0 = System, 1 = English, 2 = Czech
     
-    // Access Token state (optional - for testing with pre-obtained tokens)
+    // Access Token state
+    @State private var useAccessToken: Bool = false
     @State private var accessToken: String = ""
 
     private var configuration: Configuration {
@@ -278,8 +308,8 @@ struct SwiftUISampleView: View {
         }
 
         do {
-            // Use access token if provided, otherwise use client credentials
-            if !accessToken.isEmpty {
+            if useAccessToken && !accessToken.isEmpty {
+                // Use access token authentication
                 return try Configuration(
                     accessToken: accessToken,
                     companyName: Constants.companyName,
@@ -287,27 +317,38 @@ struct SwiftUISampleView: View {
                     environment: .sandbox,
                     theme: isCustomThemeEnabled ? customTheme : .default,
                     isLoggingEnabled: true,
+                    isScreenCaptureEnabled: true,
                     language: selectedLanguage
                 )
             } else {
+                // Use client credentials authentication
                 return try Configuration(
-            clientId: Constants.clientId,
-            clientSecret: Constants.clientSecret,
-            companyName: Constants.companyName,
-            termsUrl: termsUrl,
-            environment: .sandbox,
-            theme: isCustomThemeEnabled ? customTheme : .default,
-            isLoggingEnabled: true,
-            language: selectedLanguage
-        )
+                    clientId: Constants.clientId,
+                    clientSecret: Constants.clientSecret,
+                    companyName: Constants.companyName,
+                    termsUrl: termsUrl,
+                    environment: .sandbox,
+                    theme: isCustomThemeEnabled ? customTheme : .default,
+                    isLoggingEnabled: true,
+                    isScreenCaptureEnabled: true,
+                    language: selectedLanguage
+                )
             }
         } catch {
             fatalError("Invalid configuration: \(error.localizedDescription)")
         }
     }
 
-    private var paymentButtonTitle: String {
-        return "Test Card Payment"
+    private func buildCustomerDetails() -> CustomerDetails {
+        CustomerDetails(
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            address: billingAddressProvided ? Constants.sampleAddress : nil,
+            phone: Constants.samplePhone,
+            legalEntity: isBusinessCustomer ? .business : .private,
+            referenceId: referenceId.isEmpty ? nil : referenceId
+        )
     }
 
     private var customTheme: Theme {
@@ -360,29 +401,6 @@ struct SwiftUISampleView: View {
         )
         return Theme(colors: colors, fonts: fonts)
     }
-
-    private func buildCustomerDetails() -> CustomerDetails {
-        CustomerDetails(
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            address: billingAddressProvided ? Constants.sampleAddress : nil,
-            phone: Constants.samplePhone,
-            legalEntity: isBusinessCustomer ? .business : .private,
-            referenceId: referenceId.isEmpty ? nil : referenceId
-        )
-    }
-
-    private func makeTransaction(flowType: FlowType, amount: Money) -> CardTransaction {
-        CardTransaction(
-            amount: amount,
-            orderId: UUID().uuidString,
-            customerDetails: buildCustomerDetails(),
-            flowType: flowType,
-            billingAddressRequired: billingAddressRequired,
-            callbackUrl: Constants.sampleCallbackUrl
-        )
-    }
 }
 
 // MARK: - PayPipesEntryModifier
@@ -395,6 +413,7 @@ private struct PayPipesEntryModifier: ViewModifier {
     let configuration: Configuration
     let currency: String
     let amount: String
+    let flowType: FlowType
     let billingAddressRequired: Bool
     let useCustomerToken: Bool
     let customerTokenValue: String
@@ -406,22 +425,23 @@ private struct PayPipesEntryModifier: ViewModifier {
     func body(content: Content) -> some View {
         let defaultAmountValue = Double(Constants.defaultAmount) ?? 10.0
         let amountValue = Decimal(Double(amount) ?? defaultAmountValue)
+        let money = Money(amount: flowType == .cardStorage ? 0.0 : amountValue, currency: currency)
         let transaction: CardTransaction
         if useCustomerToken && !customerTokenValue.isEmpty {
             transaction = CardTransaction(
-                amount: Money(amount: amountValue, currency: currency),
+                amount: money,
                 orderId: orderSeed.uuidString,
                 customerToken: customerTokenValue,
-                flowType: .cardPayment,
+                flowType: flowType,
                 billingAddressRequired: billingAddressRequired,
                 callbackUrl: Constants.sampleCallbackUrl
             )
         } else {
             transaction = CardTransaction(
-                amount: Money(amount: amountValue, currency: currency),
+                amount: money,
                 orderId: orderSeed.uuidString,
                 customerDetails: buildCustomerDetails(),
-                flowType: .cardPayment,
+                flowType: flowType,
                 billingAddressRequired: billingAddressRequired,
                 callbackUrl: Constants.sampleCallbackUrl
             )

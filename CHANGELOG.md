@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.7] - 2026-03-10
+
+### Improved
+- Focus automatically advances from card number → expiry → CVC as each field is completed, creating a smoother card entry flow
+
+### Fixed
+- Cardholder name is no longer sanitized before submission (removed whitespace normalization, apostrophe conversion, and forced title case)
+- Country and state picker search is now diacritics-insensitive (e.g. "cesko" matches "Česko")
+- Country names in billing address picker now respect the SDK language override instead of always using the device locale
+
 ## [1.0.6] - 2026-02-09
 
 ### Added

@@ -430,7 +430,9 @@ public struct Country : Swift.Equatable, Swift.Hashable, Swift.Codable, Swift.Id
   public var description: Swift.String {
     get
   }
-  public static let allAvailable: [PayPipes.Country]
+  public static var allAvailable: [PayPipes.Country] {
+    get
+  }
   public init(iso3166Alpha2: Swift.String)
   public static func countries(forDialingCode input: Swift.String) -> [PayPipes.Country]
   public static func == (a: PayPipes.Country, b: PayPipes.Country) -> Swift.Bool
