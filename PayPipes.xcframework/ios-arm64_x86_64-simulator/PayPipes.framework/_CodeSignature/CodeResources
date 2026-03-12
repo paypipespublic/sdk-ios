@@ -10,11 +10,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jgW6+XcoLNXS2xilCd3rSmlNfoY=
+		G7Cg9nqPYd6/8Bfvlz6UFzSJtCs=
 		</data>
 		<key>Modules/PayPipes.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		mi8/nMMBHljLM9wHXoiSBK+Oonw=
+		hxoVNFXNObGlJ3eBDFCc9sQsig8=
 		</data>
 		<key>Modules/PayPipes.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/PayPipes.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4tSWQzFLTyR+BRQ2S45ouVpmOX4=
+		xeJzP0OkdXsTzB7/sgMzGvyRlnU=
 		</data>
 		<key>Modules/PayPipes.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		mi8/nMMBHljLM9wHXoiSBK+Oonw=
+		hxoVNFXNObGlJ3eBDFCc9sQsig8=
 		</data>
 		<key>Modules/PayPipes.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/PayPipes.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sL0usFSmh3CG8ei/c/7GzXUgMYI=
+		xZQiL5srl/VzIVgoFu7/HpuVDWM=
 		</data>
 		<key>PrivacyInfo.xcprivacy</key>
 		<data>
@@ -92,7 +92,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jYdgbpi0sIFbZNK+RiyE+5FRUmC1lmAJW4Z5xO857r8=
+			yN8oJ/eRALeOXIJ1HjzMufXIkKR2JT2rDCpo94NnOfA=
 			</data>
 		</dict>
 		<key>Modules/PayPipes.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -120,14 +120,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dNtW2V9Wh2vT7XbjL6squA/U6udg6OmDKXDwVBWGji4=
+			kUoyQqXYPpZeRmosoRDulu4+cwYb6835CQtwFDbjpkE=
 			</data>
 		</dict>
 		<key>Modules/PayPipes.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jYdgbpi0sIFbZNK+RiyE+5FRUmC1lmAJW4Z5xO857r8=
+			yN8oJ/eRALeOXIJ1HjzMufXIkKR2JT2rDCpo94NnOfA=
 			</data>
 		</dict>
 		<key>Modules/PayPipes.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -155,7 +155,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iFBpk2zoDKEJ165nR914dCzA/xG69sAWkGVLOcKIMm0=
+			VbjaxMt2ILcpbKY7DPLH8ljNcDv9w4wnTAyB3oq3BR8=
 			</data>
 		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
